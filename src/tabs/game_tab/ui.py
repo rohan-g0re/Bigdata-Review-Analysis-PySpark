@@ -241,7 +241,7 @@ def render_game_info_tab():
             # Show how many reviews match the language filter
             if selected_language != "all":
                 lang_review_count = len(game_info['all_upvoted_reviews'][game_info['all_upvoted_reviews']['language'] == selected_language]) + \
-                                    len(game_info['all_funny_reviews'][game_info['all_funny_reviews']['language'] == selected_language])
+                                   len(game_info['all_funny_reviews'][game_info['all_funny_reviews']['language'] == selected_language])
                 st.caption(f"Found {lang_review_count} reviews in {selected_lang_display} out of {game_info['total_reviews']} total reviews")
             
             # Display top 10 reviews with most upvotes
@@ -257,6 +257,15 @@ def render_game_info_tab():
                 display_review_cards(funny_reviews, vote_type="funny")
             else:
                 st.info(f"No funny-voted reviews available in {selected_lang_display}.")
+            
+        # Display top 10 reviews with most comments
+        if 'all_commented_reviews' in game_info:
+            st.subheader("Top Reviews by Comment Count")
+            commented_reviews = filter_reviews_by_language(game_info['all_commented_reviews'], selected_language)
+            if not commented_reviews.empty:
+                display_review_cards(commented_reviews, vote_type="comments")
+            else:
+                st.info(f"No reviews with comments available in {selected_lang_display}.")
             
         st.markdown("---")
     elif st.session_state.game_data is None and game_name:

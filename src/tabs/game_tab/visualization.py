@@ -84,11 +84,20 @@ def display_review_cards(reviews_df, vote_type="upvotes"):
     
     Parameters:
     - reviews_df: Pandas DataFrame containing review data
-    - vote_type: Type of votes to display ("upvotes" or "funny")
+    - vote_type: Type of votes to display ("upvotes", "funny", or "comments")
     """
-    vote_field = "votes_up" if vote_type == "upvotes" else "votes_funny"
-    vote_icon = "👍" if vote_type == "upvotes" else "😂"
-    vote_label = "upvotes" if vote_type == "upvotes" else "funny votes"
+    if vote_type == "upvotes":
+        vote_field = "votes_up"
+        vote_icon = "👍"
+        vote_label = "upvotes"
+    elif vote_type == "funny":
+        vote_field = "votes_funny"
+        vote_icon = "😂"
+        vote_label = "funny votes"
+    elif vote_type == "comments":
+        vote_field = "comment_count"
+        vote_icon = "💬"
+        vote_label = "comments"
     
     for i, row in reviews_df.iterrows():
         with st.container():

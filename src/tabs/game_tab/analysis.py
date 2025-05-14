@@ -208,6 +208,23 @@ def get_game_info(spark, parquet_dir, game_name, start_date=None, end_date=None)
             } for row in top_funny_reviews
         ])
         
+        # Get reviews with most comments
+        top_commented_reviews = game_df.select(
+            "author_steamid", "review", "comment_count", "timestamp_created", "author_playtime_at_review", "language"
+        ).orderBy(col("comment_count").desc()).limit(100).collect()
+        
+        # Convert to pandas DataFrame
+        all_commented_df = pd.DataFrame([
+            {
+                "author_id": row["author_steamid"],
+                "review_text": truncate_text(row["review"]),
+                "comment_count": row["comment_count"],
+                "date": row["timestamp_created"].strftime("%Y-%m-%d"),
+                "playtime_hrs": round(row["author_playtime_at_review"] / 60, 1) if row["author_playtime_at_review"] else 0,
+                "language": row["language"]
+            } for row in top_commented_reviews
+        ])
+        
         # Return the information
         return {
             "game_name": game_name,
@@ -217,6 +234,7 @@ def get_game_info(spark, parquet_dir, game_name, start_date=None, end_date=None)
             "time_series_data": time_series_data,
             "all_upvoted_reviews": all_upvoted_df,
             "all_funny_reviews": all_funny_df,
+            "all_commented_reviews": all_commented_df,
             "received_free_data": received_free_data,
             "early_access_count": early_access_count,
             # New sentiment analysis data
