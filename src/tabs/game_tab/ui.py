@@ -5,7 +5,14 @@ import pandas as pd
 from datetime import datetime, timedelta
 from src.utils.spark_session import get_spark_session
 from src.tabs.game_tab.analysis import get_game_info
-from src.tabs.game_tab.visualization import create_time_series_plot, create_acquisition_pie_chart, display_review_cards
+from src.tabs.game_tab.visualization import (
+    create_time_series_plot, 
+    create_acquisition_pie_chart, 
+    display_review_cards,
+    create_sentiment_gauge,
+    display_sentiment_reviews,
+    create_sentiment_distribution_chart
+)
 from src.utils.constants import LANGUAGES, LANGUAGE_DISPLAY_NAMES
 
 def filter_reviews_by_language(reviews_df, language):
@@ -88,7 +95,7 @@ def render_game_info_tab():
         st.caption(f"Data filtered from {start_date} to {end_date}")
         
         # Use columns for the key metrics
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
             st.metric("Total Reviews", f"{game_info['total_reviews']:,}")
@@ -109,6 +116,52 @@ def render_game_info_tab():
                 "Early Access Reviews", 
                 f"{early_access_count:,} ({early_access_percent:.1f}%)"
             )
+            
+        with col4:
+            # Display sentiment score with appropriate label
+            sentiment_score = game_info.get('sentiment_score', 0)
+            if sentiment_score >= 0.6:
+                sentiment_label = "Very Positive"
+            elif sentiment_score >= 0.2:
+                sentiment_label = "Positive"
+            elif sentiment_score >= -0.2:
+                sentiment_label = "Mixed"
+            elif sentiment_score >= -0.6:
+                sentiment_label = "Negative"
+            else:
+                sentiment_label = "Very Negative"
+                
+            st.metric(
+                "Sentiment Rating", 
+                f"{sentiment_label}",
+                f"Score: {sentiment_score:.2f}"
+            )
+            
+        # Add sentiment analysis section
+        if 'sentiment_score' in game_info:
+            st.subheader("Review Sentiment Analysis")
+            st.caption(f"Based on {game_info.get('sentiment_analyzed_count', 0):,} analyzed reviews")
+            
+            # Create two columns for sentiment charts
+            sentiment_col1, sentiment_col2 = st.columns(2)
+            
+            with sentiment_col1:
+                # Create and display sentiment gauge chart
+                gauge_fig = create_sentiment_gauge(game_info['sentiment_score'])
+                st.plotly_chart(gauge_fig, use_container_width=True)
+                
+                # Information about what the score means
+                with st.expander("What does this score mean?"):
+                    st.markdown("""
+                    The sentiment score ranges from -1 (very negative) to +1 (very positive):
+                    - **> 0.6**: Very Positive - Players strongly enjoy the game
+                    - **0.2 to 0.6**: Positive - Players generally like the game
+                    - **-0.2 to 0.2**: Mixed - Players have varied opinions
+                    - **-0.6 to -0.2**: Negative - Players generally dislike the game
+                    - **< -0.6**: Very Negative - Players strongly dislike the game
+                    
+                    This analysis is performed using an AI language model that evaluates the emotional tone of each review.
+                    """)
         
         # Add time series plot and acquisition method pie chart side by side
         if 'time_series_data' in game_info and not game_info['time_series_data'].empty:
@@ -137,6 +190,25 @@ def render_game_info_tab():
                 st.dataframe(sorted_data, use_container_width=True)
         else:
             st.warning("Not enough time-based data available to create a timeline chart.")
+            
+        # Display sentiment review analysis
+        if 'top_positive_reviews' in game_info and 'top_negative_reviews' in game_info:
+            st.subheader("Sentiment Analysis Reviews")
+            
+            # Create tabs for positive and negative reviews
+            pos_tab, neg_tab = st.tabs(["Most Positive Reviews", "Most Negative Reviews"])
+            
+            with pos_tab:
+                if not game_info['top_positive_reviews'].empty:
+                    display_sentiment_reviews(game_info['top_positive_reviews'], sentiment_type="positive")
+                else:
+                    st.info("No positive reviews found for analysis.")
+                    
+            with neg_tab:
+                if not game_info['top_negative_reviews'].empty:
+                    display_sentiment_reviews(game_info['top_negative_reviews'], sentiment_type="negative")
+                else:
+                    st.info("No negative reviews found for analysis.")
         
         # Language filter for reviews
         st.subheader("Filter Reviews by Language")
