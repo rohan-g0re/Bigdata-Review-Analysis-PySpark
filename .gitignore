@@ -4,7 +4,9 @@ spark_temp/
 
 src/tabs/game_tab/__pycache__/
 
-__pycache__/
+src/tabs/top_games_tab/__pycache__/
+
+**/__pycache__/
 
 *.pyc
 
