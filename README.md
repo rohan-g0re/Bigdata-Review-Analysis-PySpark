@@ -1,1 +1,1 @@
-run in powershell using: python -m streamlit .\src\streamlit_app.py
+run in powershell using: python -m streamlit run .\src\streamlit_app.py
