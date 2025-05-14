@@ -1,10 +1,27 @@
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+import pandas as pd
 from datetime import datetime, timedelta
 from src.utils.spark_session import get_spark_session
 from src.tabs.game_tab.analysis import get_game_info
-from src.tabs.game_tab.visualization import create_time_series_plot, display_review_cards
+from src.tabs.game_tab.visualization import create_time_series_plot, create_acquisition_pie_chart, display_review_cards
+from src.utils.constants import LANGUAGES, LANGUAGE_DISPLAY_NAMES
+
+def filter_reviews_by_language(reviews_df, language):
+    """Filter reviews DataFrame by language.
+    
+    Args:
+        reviews_df: DataFrame containing reviews
+        language: Language code to filter by, or "all" for all languages
+        
+    Returns:
+        Filtered DataFrame
+    """
+    if language == "all" or reviews_df.empty:
+        return reviews_df
+    
+    return reviews_df[reviews_df['language'] == language].head(10)
 
 def render_game_info_tab():
     """Content for the Game Info tab"""
@@ -41,6 +58,10 @@ def render_game_info_tab():
     # Add a debug toggle
     show_debug = st.checkbox("Show debug information")
     
+    # Store game data in session state to avoid reloading
+    if 'game_data' not in st.session_state:
+        st.session_state.game_data = None
+    
     if st.button("Search Game") and game_name:
         with st.spinner("Searching for game information..."):
             # Get Spark session
@@ -51,59 +72,120 @@ def render_game_info_tab():
                 with st.expander("Debug Information", expanded=show_debug):
                     game_info = get_game_info(spark, parquet_dir, game_name, start_datetime, end_datetime)
                 
-                if game_info:
-                    # Create a nice card-like display
-                    st.markdown("---")
-                    st.markdown(f"## {game_info['game_name']}")
-                    st.caption(f"Data filtered from {start_date} to {end_date}")
-                    
-                    # Use columns for the metrics
-                    col1, col2 = st.columns(2)
-                    
-                    with col1:
-                        st.metric("Total Reviews", f"{game_info['total_reviews']:,}")
-                    
-                    with col2:
-                        # Convert to hours if available
-                        if game_info['avg_playtime'] is not None:
-                            avg_hours = game_info['avg_playtime'] / 60  # Convert minutes to hours
-                            st.metric("Average Playtime at Review", f"{avg_hours:.1f} hours")
-                        else:
-                            st.metric("Average Playtime at Review", "Not available")
-                    
-                    # Add time series plot if data is available
-                    if 'time_series_data' in game_info and not game_info['time_series_data'].empty:
-                        st.subheader("Reviews Over Time")
-                        
-                        # Create and display time series plot
-                        fig = create_time_series_plot(game_info)
-                        st.plotly_chart(fig, use_container_width=True)
-                        
-                        # Add a data table with the time series data
-                        with st.expander("View Daily Review Data"):
-                            # Sort from newest to oldest
-                            sorted_data = game_info['time_series_data'].sort_values(by='date', ascending=False)
-                            st.dataframe(sorted_data, use_container_width=True)
-                    else:
-                        st.warning("Not enough time-based data available to create a timeline chart.")
-                    
-                    # Display top 10 reviews with most upvotes
-                    st.subheader("Top Reviews by Upvotes")
-                    if 'top_upvoted_reviews' in game_info and not game_info['top_upvoted_reviews'].empty:
-                        display_review_cards(game_info['top_upvoted_reviews'], vote_type="upvotes")
-                    else:
-                        st.info("No upvoted reviews data available.")
-                    
-                    # Display top 10 reviews with most funny votes
-                    st.subheader("Top Reviews by Funny Votes")
-                    if 'top_funny_reviews' in game_info and not game_info['top_funny_reviews'].empty:
-                        display_review_cards(game_info['top_funny_reviews'], vote_type="funny")
-                    else:
-                        st.info("No funny-voted reviews data available.")
-                    
-                    st.markdown("---")
-                else:
-                    st.error(f"Game '{game_name}' not found in the dataset within the selected date range. Please check the spelling, try another game, or adjust the date range.")
+                # Store in session state
+                st.session_state.game_data = game_info
             finally:
                 # Stop Spark session
-                spark.stop() 
+                spark.stop()
+    
+    # Display game data if available in session state
+    if st.session_state.game_data:
+        game_info = st.session_state.game_data
+        
+        # Create a nice card-like display
+        st.markdown("---")
+        st.markdown(f"## {game_info['game_name']}")
+        st.caption(f"Data filtered from {start_date} to {end_date}")
+        
+        # Use columns for the key metrics
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.metric("Total Reviews", f"{game_info['total_reviews']:,}")
+        
+        with col2:
+            # Convert to hours if available
+            if game_info['avg_playtime'] is not None:
+                avg_hours = game_info['avg_playtime'] / 60  # Convert minutes to hours
+                st.metric("Average Playtime at Review", f"{avg_hours:.1f} hours")
+            else:
+                st.metric("Average Playtime at Review", "Not available")
+        
+        with col3:
+            # Display early access review count and percentage
+            early_access_count = game_info['early_access_count']
+            early_access_percent = (early_access_count / game_info['total_reviews']) * 100
+            st.metric(
+                "Early Access Reviews", 
+                f"{early_access_count:,} ({early_access_percent:.1f}%)"
+            )
+        
+        # Add time series plot and acquisition method pie chart side by side
+        if 'time_series_data' in game_info and not game_info['time_series_data'].empty:
+            st.subheader("Reviews Over Time and Acquisition Method")
+            
+            # Create two columns for the charts
+            chart_col1, chart_col2 = st.columns(2)
+            
+            with chart_col1:
+                # Create and display time series plot
+                time_fig = create_time_series_plot(game_info)
+                st.plotly_chart(time_fig, use_container_width=True)
+            
+            with chart_col2:
+                # Create and display pie chart if data is available
+                if 'received_free_data' in game_info and not game_info['received_free_data'].empty:
+                    pie_fig = create_acquisition_pie_chart(game_info)
+                    st.plotly_chart(pie_fig, use_container_width=True)
+                else:
+                    st.info("No acquisition data available.")
+            
+            # Add a data table with the time series data
+            with st.expander("View Daily Review Data"):
+                # Sort from newest to oldest
+                sorted_data = game_info['time_series_data'].sort_values(by='date', ascending=False)
+                st.dataframe(sorted_data, use_container_width=True)
+        else:
+            st.warning("Not enough time-based data available to create a timeline chart.")
+        
+        # Language filter for reviews
+        st.subheader("Filter Reviews by Language")
+        
+        # Create a dropdown with available languages
+        available_langs = ["all"] + game_info.get("available_languages", [])
+        
+        # Create display names for the dropdown
+        lang_options = [LANGUAGE_DISPLAY_NAMES.get(lang, lang) for lang in available_langs]
+        
+        # Create a mapping from display name back to language code
+        display_to_lang = {LANGUAGE_DISPLAY_NAMES.get(lang, lang): lang for lang in available_langs}
+        
+        # Create the dropdown
+        selected_lang_display = st.selectbox(
+            "Select language for reviews:", 
+            options=lang_options,
+            index=0  # Default to "All Languages"
+        )
+        
+        # Convert back to language code
+        selected_language = display_to_lang.get(selected_lang_display, "all")
+        
+        # Client-side filtering for reviews by language
+        if 'all_upvoted_reviews' in game_info and 'all_funny_reviews' in game_info:
+            # Filter the reviews by language
+            upvoted_reviews = filter_reviews_by_language(game_info['all_upvoted_reviews'], selected_language)
+            funny_reviews = filter_reviews_by_language(game_info['all_funny_reviews'], selected_language)
+            
+            # Show how many reviews match the language filter
+            if selected_language != "all":
+                lang_review_count = len(game_info['all_upvoted_reviews'][game_info['all_upvoted_reviews']['language'] == selected_language]) + \
+                                    len(game_info['all_funny_reviews'][game_info['all_funny_reviews']['language'] == selected_language])
+                st.caption(f"Found {lang_review_count} reviews in {selected_lang_display} out of {game_info['total_reviews']} total reviews")
+            
+            # Display top 10 reviews with most upvotes
+            st.subheader("Top Reviews by Upvotes")
+            if not upvoted_reviews.empty:
+                display_review_cards(upvoted_reviews, vote_type="upvotes")
+            else:
+                st.info(f"No upvoted reviews available in {selected_lang_display}.")
+            
+            # Display top 10 reviews with most funny votes
+            st.subheader("Top Reviews by Funny Votes")
+            if not funny_reviews.empty:
+                display_review_cards(funny_reviews, vote_type="funny")
+            else:
+                st.info(f"No funny-voted reviews available in {selected_lang_display}.")
+            
+        st.markdown("---")
+    elif st.session_state.game_data is None and game_name:
+        st.error(f"Game '{game_name}' not found in the dataset within the selected date range. Please check the spelling, try another game, or adjust the date range.") 

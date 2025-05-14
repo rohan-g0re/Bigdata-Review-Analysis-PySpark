@@ -44,6 +44,39 @@ def create_time_series_plot(game_info):
     
     return fig
 
+def create_acquisition_pie_chart(game_info):
+    """
+    Create a pie chart showing free vs. purchased game acquisition.
+    
+    Parameters:
+    - game_info: Dictionary containing game data including received_free_data
+    
+    Returns:
+    - Plotly figure object
+    """
+    # Create pie chart
+    fig = px.pie(
+        game_info['received_free_data'],
+        values='count',
+        names='category',
+        title=f"How Users Acquired {game_info['game_name']}",
+        color='category',
+        color_discrete_map={'Purchased': 'rgba(0, 176, 246, 0.7)', 'Free': 'rgba(246, 78, 139, 0.7)'}
+    )
+    
+    # Update layout for better readability
+    fig.update_layout(
+        legend_title="Acquisition Method"
+    )
+    
+    # Update traces for better hover info
+    fig.update_traces(
+        textinfo='percent+value',
+        hoverinfo='label+percent+value'
+    )
+    
+    return fig
+
 def display_review_cards(reviews_df, vote_type="upvotes"):
     """
     Display review cards for a dataset of reviews.
