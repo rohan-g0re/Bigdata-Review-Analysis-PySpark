@@ -224,6 +224,9 @@ def display_sentiment_reviews(reviews_df, sentiment_type="positive"):
         sentiment_value = f"{sentiment_score:.2f}"
         confidence = f"{row.get('confidence', 0):.2f}"
         
+        # Get upvote count, default to 0 if not present
+        upvotes = row.get('votes_up', 0)
+        
         with st.container():
             st.markdown(f"""
             <div style="border: 1px solid {border_color}; padding: 10px; border-radius: 5px; margin-bottom: 10px; background-color: {bg_color};">
@@ -234,7 +237,10 @@ def display_sentiment_reviews(reviews_df, sentiment_type="positive"):
                 <div style="margin-bottom: 10px;">{row['review_text']}</div>
                 <div style="display: flex; justify-content: space-between;">
                     <span>{sentiment_emoji} <strong>Sentiment:</strong> {sentiment_value} (Confidence: {confidence})</span>
-                    <span>⏱️ <strong>{row['playtime_hrs']}</strong> hours played</span>
+                    <div>
+                        <span>👍 <strong>{upvotes}</strong> upvotes</span>
+                        <span style="margin-left: 15px;">⏱️ <strong>{row['playtime_hrs']}</strong> hours played</span>
+                    </div>
                 </div>
             </div>
             """, unsafe_allow_html=True)

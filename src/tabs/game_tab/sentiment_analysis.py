@@ -85,7 +85,7 @@ def get_overall_sentiment(sentiment_results):
 
 def get_extreme_reviews(reviews_df, sentiment_results, count=10, sentiment_type="positive"):
     """
-    Get the most positive or negative reviews.
+    Get the most upvoted positive or negative reviews.
     
     Args:
         reviews_df: DataFrame with reviews
@@ -94,17 +94,27 @@ def get_extreme_reviews(reviews_df, sentiment_results, count=10, sentiment_type=
         sentiment_type: Either "positive" or "negative"
     
     Returns:
-        DataFrame with top reviews
+        DataFrame with top reviews sorted by upvotes
     """
     # Add sentiment scores to reviews
     reviews_with_sentiment = reviews_df.copy()
     reviews_with_sentiment["sentiment"] = [r["sentiment"] for r in sentiment_results]
     reviews_with_sentiment["confidence"] = [r["confidence"] for r in sentiment_results]
     
-    # Sort by sentiment score
+    # Filter reviews by sentiment type
     if sentiment_type == "positive":
-        sorted_reviews = reviews_with_sentiment.sort_values("sentiment", ascending=False)
+        # Consider reviews with sentiment score >= 0.2 as positive
+        filtered_reviews = reviews_with_sentiment[reviews_with_sentiment["sentiment"] >= 0.2]
     else:
-        sorted_reviews = reviews_with_sentiment.sort_values("sentiment", ascending=True)
+        # Consider reviews with sentiment score <= -0.2 as negative
+        filtered_reviews = reviews_with_sentiment[reviews_with_sentiment["sentiment"] <= -0.2]
     
+    # If no reviews meet the criteria, return empty DataFrame
+    if filtered_reviews.empty:
+        return filtered_reviews
+    
+    # Sort the filtered reviews by upvotes (descending)
+    sorted_reviews = filtered_reviews.sort_values("votes_up", ascending=False)
+    
+    # Return the top reviews
     return sorted_reviews.head(count) 

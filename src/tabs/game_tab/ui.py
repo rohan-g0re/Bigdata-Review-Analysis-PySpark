@@ -196,7 +196,7 @@ def render_game_info_tab():
             st.subheader("Sentiment Analysis Reviews")
             
             # Create tabs for positive and negative reviews
-            pos_tab, neg_tab = st.tabs(["Most Positive Reviews", "Most Negative Reviews"])
+            pos_tab, neg_tab = st.tabs(["Most Upvoted Positive Reviews", "Most Upvoted Negative Reviews"])
             
             with pos_tab:
                 if not game_info['top_positive_reviews'].empty:
