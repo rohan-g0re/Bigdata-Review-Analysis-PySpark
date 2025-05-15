@@ -1,6 +1,6 @@
 import streamlit as st
-from src.tabs.top_games_tab.ui import render_top_games_tab
-from src.tabs.game_tab.ui import render_game_info_tab
+from tabs.top_games_tab.ui import render_top_games_tab
+from tabs.game_tab.ui import render_game_info_tab
 
 def main():
     """Main function to run the Streamlit app"""

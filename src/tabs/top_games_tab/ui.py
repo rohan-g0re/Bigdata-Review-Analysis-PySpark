@@ -2,6 +2,7 @@ import streamlit as st
 import plotly.express as px
 from src.utils.spark_session import get_spark_session
 from src.tabs.top_games_tab.analysis import get_top_k_games_by_reviews
+import os
 
 def render_top_games_tab():
     """Content for the Top Games tab"""
@@ -10,8 +11,8 @@ def render_top_games_tab():
     # Input for number of top games
     k = st.slider("Number of Top Games to Display", min_value=5, max_value=50, value=10, step=5)
     
-    # Path to parquet files
-    parquet_dir = "D:/STUFF/Projects/BigData_Project/data/all_reviews/cleaned_reviews"
+    # Path to parquet files - using relative path from project root
+    parquet_dir = os.path.join("data", "cleaned_reviews_parquet")
     
     # Run analysis when user clicks button
     if st.button("Analyze Top Games"):
