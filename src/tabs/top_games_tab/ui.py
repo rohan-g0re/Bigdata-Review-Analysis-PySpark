@@ -75,15 +75,48 @@ def render_streaming_mode(k: int):
     )
     
     if top_games is not None and not top_games.empty:
-        # Convert column names for consistency with batch mode
-        if "game_id" in top_games.columns and "review_count" in top_games.columns:
-            display_df = top_games.rename(columns={
-                "game_id": "game",
-                "review_count": "count"
-            })
+        # Create a copy to avoid modifying the original
+        display_df = top_games.copy()
+        
+        # Normalize column names for display
+        column_mappings = {
+            # Possible game id/name columns
+            'game_id': 'game',
+            'app_id': 'game',
+            'game_name': 'game',
+            'name': 'game',
+            
+            # Possible count columns
+            'review_count': 'count',
+            'count': 'count',
+            'game_count': 'count',
+            'total': 'count'
+        }
+        
+        # Apply mappings for columns that exist
+        for old_col, new_col in column_mappings.items():
+            if old_col in display_df.columns:
+                display_df = display_df.rename(columns={old_col: new_col})
+        
+        # Check if we have the minimum required columns after mapping
+        if 'game' in display_df.columns and 'count' in display_df.columns:
             display_top_games_results(display_df, k)
         else:
-            st.warning("Streaming data format does not match expected schema")
+            st.warning(f"Streaming data format missing required columns. Available columns: {list(display_df.columns)}")
+            
+            # Create default columns if they don't exist
+            if 'game' not in display_df.columns and len(display_df.columns) > 0:
+                # Use the first column as the game name
+                display_df = display_df.rename(columns={display_df.columns[0]: 'game'})
+                
+            if 'count' not in display_df.columns and len(display_df.columns) > 1:
+                # Use the second column as the count
+                display_df = display_df.rename(columns={display_df.columns[1]: 'count'})
+                
+            # Try displaying with what we have
+            if 'game' in display_df.columns:
+                st.write("Showing data with limited formatting:")
+                st.dataframe(display_df)
     else:
         st.info("No streaming data available yet. Start the streaming system to see real-time data.")
         st.caption("Run `python -m src.streaming.run_system --component all --dashboard` to start the system")

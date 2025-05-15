@@ -13,11 +13,17 @@ class StreamDataManager:
     """
     Class to manage access to streaming data for the dashboard
     """
-    def __init__(self, results_dir: str = STREAM_RESULTS_DIR):
+    def __init__(self, results_dir: str = STREAM_RESULTS_DIR, debug_mode: bool = False):
         self.results_dir = results_dir
         self.last_refresh_time = None
         self.data_cache = {}
         self.file_timestamps = {}
+        self.debug_mode = debug_mode
+    
+    def _debug_print(self, message: str) -> None:
+        """Helper method for debug logging"""
+        if self.debug_mode:
+            print(message)
     
     def get_data_freshness(self) -> Dict[str, Any]:
         """
@@ -96,27 +102,64 @@ class StreamDataManager:
             
             # Load top games data
             top_games_path = os.path.join(self.results_dir, 'top_games.csv')
-            if os.path.exists(top_games_path):
-                top_games_df = pd.read_csv(top_games_path)
-                self.file_timestamps[top_games_path] = os.path.getmtime(top_games_path)
+            if os.path.exists(top_games_path) and os.path.getsize(top_games_path) > 0:
+                try:
+                    top_games_df = pd.read_csv(top_games_path, encoding='utf-8')
+                    self.file_timestamps[top_games_path] = os.path.getmtime(top_games_path)
+                except UnicodeDecodeError:
+                    # Try with error handling
+                    try:
+                        top_games_df = pd.read_csv(top_games_path, encoding='utf-8', encoding_errors='replace')
+                        self.file_timestamps[top_games_path] = os.path.getmtime(top_games_path)
+                    except Exception as e:
+                        self._debug_print(f"Error reading {top_games_path}: {str(e)}")
+                except Exception as e:
+                    self._debug_print(f"Error reading {top_games_path}: {str(e)}")
                 
             # Load sentiment analysis data
             sentiment_path = os.path.join(self.results_dir, 'sentiment_analysis.csv')
-            if os.path.exists(sentiment_path):
-                sentiment_df = pd.read_csv(sentiment_path)
-                self.file_timestamps[sentiment_path] = os.path.getmtime(sentiment_path)
+            if os.path.exists(sentiment_path) and os.path.getsize(sentiment_path) > 0:
+                try:
+                    sentiment_df = pd.read_csv(sentiment_path, encoding='utf-8')
+                    self.file_timestamps[sentiment_path] = os.path.getmtime(sentiment_path)
+                except UnicodeDecodeError:
+                    try:
+                        sentiment_df = pd.read_csv(sentiment_path, encoding='utf-8', encoding_errors='replace')
+                        self.file_timestamps[sentiment_path] = os.path.getmtime(sentiment_path)
+                    except Exception as e:
+                        self._debug_print(f"Error reading {sentiment_path}: {str(e)}")
+                except Exception as e:
+                    self._debug_print(f"Error reading {sentiment_path}: {str(e)}")
                 
             # Load time distribution data
             time_path = os.path.join(self.results_dir, 'time_distribution.csv')
-            if os.path.exists(time_path):
-                time_df = pd.read_csv(time_path)
-                self.file_timestamps[time_path] = os.path.getmtime(time_path)
+            if os.path.exists(time_path) and os.path.getsize(time_path) > 0:
+                try:
+                    time_df = pd.read_csv(time_path, encoding='utf-8')
+                    self.file_timestamps[time_path] = os.path.getmtime(time_path)
+                except UnicodeDecodeError:
+                    try:
+                        time_df = pd.read_csv(time_path, encoding='utf-8', encoding_errors='replace')
+                        self.file_timestamps[time_path] = os.path.getmtime(time_path)
+                    except Exception as e:
+                        self._debug_print(f"Error reading {time_path}: {str(e)}")
+                except Exception as e:
+                    self._debug_print(f"Error reading {time_path}: {str(e)}")
                 
             # Load recent reviews data
             reviews_path = os.path.join(self.results_dir, 'recent_reviews.csv')
-            if os.path.exists(reviews_path):
-                recent_reviews_df = pd.read_csv(reviews_path)
-                self.file_timestamps[reviews_path] = os.path.getmtime(reviews_path)
+            if os.path.exists(reviews_path) and os.path.getsize(reviews_path) > 0:
+                try:
+                    recent_reviews_df = pd.read_csv(reviews_path, encoding='utf-8')
+                    self.file_timestamps[reviews_path] = os.path.getmtime(reviews_path)
+                except UnicodeDecodeError:
+                    try:
+                        recent_reviews_df = pd.read_csv(reviews_path, encoding='utf-8', encoding_errors='replace')
+                        self.file_timestamps[reviews_path] = os.path.getmtime(reviews_path)
+                    except Exception as e:
+                        self._debug_print(f"Error reading {reviews_path}: {str(e)}")
+                except Exception as e:
+                    self._debug_print(f"Error reading {reviews_path}: {str(e)}")
             
             # Update cache
             self.data_cache = {
@@ -130,7 +173,7 @@ class StreamDataManager:
             self.last_refresh_time = datetime.now()
             
         except Exception as e:
-            print(f"Error loading streaming data: {str(e)}")
+            self._debug_print(f"Error loading streaming data: {str(e)}")
         
         return top_games_df, sentiment_df, time_df, recent_reviews_df
     
@@ -148,7 +191,24 @@ class StreamDataManager:
         top_games_df, _, _, _ = self.load_streaming_data(force_refresh)
         
         if top_games_df is not None and not top_games_df.empty:
-            return top_games_df.sort_values('review_count', ascending=False).head(limit)
+            # Debug: print the columns to help troubleshoot
+            self._debug_print(f"Top games DataFrame columns: {list(top_games_df.columns)}")
+            
+            # Check if the expected column exists
+            sort_column = 'review_count'
+            if sort_column not in top_games_df.columns:
+                # Look for alternative column names
+                if 'count' in top_games_df.columns:
+                    sort_column = 'count'
+                elif 'game_count' in top_games_df.columns:
+                    sort_column = 'game_count'
+                else:
+                    # If no suitable column found, just return the data unsorted
+                    self._debug_print(f"Warning: Could not find a suitable column to sort by. Available columns: {list(top_games_df.columns)}")
+                    return top_games_df.head(limit)
+            
+            # Sort by the identified column
+            return top_games_df.sort_values(sort_column, ascending=False).head(limit)
         
         return None
     
@@ -166,7 +226,24 @@ class StreamDataManager:
         _, sentiment_df, _, _ = self.load_streaming_data(force_refresh)
         
         if sentiment_df is not None and not sentiment_df.empty:
-            return sentiment_df.sort_values('review_count', ascending=False).head(limit)
+            # Debug: print the columns to help troubleshoot
+            self._debug_print(f"Sentiment DataFrame columns: {list(sentiment_df.columns)}")
+            
+            # Check if the expected column exists
+            sort_column = 'review_count'
+            if sort_column not in sentiment_df.columns:
+                # Look for alternative column names
+                if 'count' in sentiment_df.columns:
+                    sort_column = 'count'
+                elif 'game_count' in sentiment_df.columns:
+                    sort_column = 'game_count'
+                else:
+                    # If no suitable column found, just return the data unsorted
+                    self._debug_print(f"Warning: Could not find a suitable column to sort by in sentiment data. Available columns: {list(sentiment_df.columns)}")
+                    return sentiment_df.head(limit)
+            
+            # Sort by the identified column
+            return sentiment_df.sort_values(sort_column, ascending=False).head(limit)
         
         return None
     
@@ -183,13 +260,20 @@ class StreamDataManager:
         _, _, time_df, _ = self.load_streaming_data(force_refresh)
         
         if time_df is not None and not time_df.empty:
-            # Ensure datetime format for the hour column
+            # Debug: print the columns to help troubleshoot
+            self._debug_print(f"Time distribution DataFrame columns: {list(time_df.columns)}")
+            
+            # Ensure datetime format for the hour column if it exists
             if 'hour' in time_df.columns:
                 try:
                     time_df['hour'] = pd.to_datetime(time_df['hour'])
-                except:
-                    pass
-            return time_df.sort_values('hour')
+                    return time_df.sort_values('hour')
+                except Exception as e:
+                    self._debug_print(f"Error converting 'hour' to datetime: {str(e)}")
+                    return time_df
+            else:
+                self._debug_print(f"Warning: 'hour' column not found in time distribution data. Available columns: {list(time_df.columns)}")
+                return time_df
         
         return None
     
@@ -207,9 +291,26 @@ class StreamDataManager:
         _, _, _, recent_reviews_df = self.load_streaming_data(force_refresh)
         
         if recent_reviews_df is not None and not recent_reviews_df.empty:
-            return recent_reviews_df.sort_values('timestamp', ascending=False).head(limit)
+            # Debug: print the columns to help troubleshoot
+            self._debug_print(f"Recent reviews DataFrame columns: {list(recent_reviews_df.columns)}")
+            
+            # Check if the expected column exists
+            sort_column = 'timestamp'
+            if sort_column not in recent_reviews_df.columns:
+                # Look for alternative column names
+                if 'timestamp_created' in recent_reviews_df.columns:
+                    sort_column = 'timestamp_created'
+                elif 'date' in recent_reviews_df.columns:
+                    sort_column = 'date'
+                else:
+                    # If no suitable column found, just return the data unsorted
+                    self._debug_print(f"Warning: Could not find a suitable column to sort by in recent reviews. Available columns: {list(recent_reviews_df.columns)}")
+                    return recent_reviews_df.head(limit)
+            
+            # Sort by the identified column
+            return recent_reviews_df.sort_values(sort_column, ascending=False).head(limit)
         
         return None
 
 # Singleton instance for use throughout the app
-stream_data_manager = StreamDataManager() 
+stream_data_manager = StreamDataManager(debug_mode=False) 

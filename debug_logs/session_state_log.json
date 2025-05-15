@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp": "2025-05-14T21:35:13.031536",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T21:35:31.624418",
+    "event": "session_state_change",
+    "previous_mode": "streaming",
+    "new_mode": "batch"
+  },
+  {
+    "timestamp": "2025-05-14T21:39:31.376683",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T21:43:10.522693",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T21:48:20.192246",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T22:00:50.205216",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T22:00:52.210287",
+    "event": "session_state_change",
+    "previous_mode": "streaming",
+    "new_mode": "batch"
+  },
+  {
+    "timestamp": "2025-05-14T22:05:56.950752",
+    "event": "session_state_change",
+    "previous_mode": "batch",
+    "new_mode": "streaming"
+  },
+  {
+    "timestamp": "2025-05-14T22:06:27.275078",
+    "event": "session_state_change",
+    "previous_mode": "streaming",
+    "new_mode": "batch"
+  }
+]

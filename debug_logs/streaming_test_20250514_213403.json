@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-05-14T21:33:57.704313",
+  "tests": [
+    {
+      "name": "Session State Change (Streaming)",
+      "result": {
+        "success": true,
+        "mode": "streaming"
+      },
+      "passed": true
+    },
+    {
+      "name": "Initial Status Check",
+      "status": {
+        "is_streaming": false,
+        "producer": "stopped",
+        "consumer": "stopped"
+      },
+      "passed": true
+    },
+    {
+      "name": "Start Streaming",
+      "success": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "name": "Process Creation Check",
+      "status": {
+        "is_streaming": false,
+        "producer": "stopped",
+        "consumer": "stopped"
+      },
+      "process_check": {
+        "producer_found": false,
+        "consumer_found": false,
+        "python_processes": 2,
+        "status": {
+          "is_streaming": false,
+          "producer": "stopped",
+          "consumer": "stopped"
+        }
+      },
+      "passed": false
+    },
+    {
+      "name": "Stop Streaming",
+      "success": true,
+      "error": null,
+      "passed": true
+    },
+    {
+      "name": "Final Status Check",
+      "status": {
+        "is_streaming": false,
+        "producer": "stopped",
+        "consumer": "stopped"
+      },
+      "process_check": {
+        "producer_found": false,
+        "consumer_found": false,
+        "python_processes": 2,
+        "status": {
+          "is_streaming": false,
+          "producer": "stopped",
+          "consumer": "stopped"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "all_tests_passed": false
+}

@@ -253,10 +253,6 @@ class StreamConsumer:
             # Create analytics directory if it doesn't exist
             os.makedirs(self.results_dir, exist_ok=True)
             logger.info(f"Analytics results will be saved to {self.results_dir}")
-            if not self.analytics.initialize():
-                logger.error("Failed to initialize analytics")
-                record_system_error("consumer", "analytics_initialization_error", "Failed to initialize analytics")
-                return False
             
             # Create the results directory if it doesn't exist
             os.makedirs(self.results_dir, exist_ok=True)
@@ -395,8 +391,13 @@ class StreamConsumer:
             message: Kafka message object
         """
         try:
-            # Decode the message value
-            value = json.loads(message.value.decode("utf-8"))
+            # Decode the message value with error handling
+            try:
+                value = json.loads(message.value.decode("utf-8"))
+            except UnicodeDecodeError:
+                # Try with error handling - replace invalid bytes
+                value = json.loads(message.value.decode("utf-8", errors="replace"))
+                logger.warning("Handled invalid UTF-8 sequence in message data")
             
             # Extract producer timestamp for latency tracking if available
             if "_producer_timestamp" in value:

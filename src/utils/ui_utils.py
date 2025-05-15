@@ -5,6 +5,13 @@ import streamlit as st
 import time
 from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, Callable
+import logging
+
+from src.utils.stream_control import start_streaming, stop_streaming, is_streaming, get_streaming_status
+from src.streaming.config.settings import DASHBOARD_REFRESH_INTERVAL
+from src.utils.debug_utils import stream_debugger
+
+logger = logging.getLogger(__name__)
 
 def create_refresh_button(key: str = "refresh_button", text: str = "Refresh Data"):
     """Create a standardized refresh button"""
@@ -24,6 +31,9 @@ def create_data_mode_toggle(session_key: str = "data_mode"):
     if session_key not in st.session_state:
         st.session_state[session_key] = "batch"
     
+    # Keep track of previous mode to detect changes
+    prev_mode = st.session_state[session_key]
+    
     # Create the toggle
     col1, col2 = st.columns([3, 1])
     
@@ -37,9 +47,64 @@ def create_data_mode_toggle(session_key: str = "data_mode"):
         )
     
     # Update session state
-    st.session_state[session_key] = "batch" if mode == "Batch Analysis" else "streaming"
+    new_mode = "batch" if mode == "Batch Analysis" else "streaming"
+    st.session_state[session_key] = new_mode
+    
+    # Check if mode changed
+    if prev_mode != new_mode:
+        # Log session state change for debugging
+        stream_debugger.log_session_state_change(prev_mode, new_mode)
+        
+        if new_mode == "streaming":
+            # Start streaming
+            with st.spinner("Starting Kafka streaming..."):
+                try:
+                    success = start_streaming()
+                    if success:
+                        st.success("Streaming started successfully!")
+                        # Log successful process start
+                        stream_debugger.log_process_start_attempt(success=True)
+                    else:
+                        st.error("Failed to start streaming. See logs for details.")
+                        # Log failed process start
+                        stream_debugger.log_process_start_attempt(success=False, error_msg="start_streaming() returned False")
+                except Exception as e:
+                    st.error(f"Exception during streaming start: {str(e)}")
+                    # Log exception during process start
+                    stream_debugger.log_process_start_attempt(success=False, error_msg=str(e))
+        else:
+            # Stop streaming
+            with st.spinner("Stopping Kafka streaming..."):
+                success = stop_streaming()
+                if success:
+                    st.info("Streaming stopped successfully.")
+                else:
+                    st.error("Failed to stop streaming. See logs for details.")
     
     return st.session_state[session_key]
+
+def create_streaming_status_indicators():
+    """
+    Display streaming system status indicators
+    
+    Returns:
+        Dict: Status information
+    """
+    status = get_streaming_status()
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("**Producer**")
+        st.markdown("**Consumer**")
+    with col2:
+        # Show green circle for running, red circle for stopped, gray for unknown
+        producer_icon = "🟢" if status["producer"] == "running" else "🔴"
+        consumer_icon = "🟢" if status["consumer"] == "running" else "🔴"
+        
+        st.markdown(f"{producer_icon} {status['producer'].capitalize()}")
+        st.markdown(f"{consumer_icon} {status['consumer'].capitalize()}")
+    
+    return status
 
 def display_data_freshness(freshness_info: Dict[str, Any], container = None):
     """
@@ -92,7 +157,7 @@ def create_auto_refresh_toggle(
         "Auto-refresh data",
         value=st.session_state[session_key],
         key=f"{session_key}_checkbox",
-        help="Automatically refresh data at regular intervals"
+        help=f"Automatically refresh data every {DASHBOARD_REFRESH_INTERVAL} seconds"
     )
     
     # Update session state
@@ -122,7 +187,7 @@ def run_with_spinner(
         return fn(*args, **kwargs)
 
 def auto_refresh_component(
-    refresh_interval: int = 10,
+    refresh_interval: int = DASHBOARD_REFRESH_INTERVAL,
     session_key: str = "last_auto_refresh"
 ):
     """
@@ -138,21 +203,32 @@ def auto_refresh_component(
     # Initialize session state if needed
     if session_key not in st.session_state:
         st.session_state[session_key] = datetime.now()
+        return True
     
-    # Always update the session state to force refresh
-    st.session_state[session_key] = datetime.now()
+    # Check if it's time to refresh
+    now = datetime.now()
+    time_elapsed = (now - st.session_state[session_key]).total_seconds()
     
-    # Create a hidden progress bar for triggering refresh
-    progress_bar = st.empty()
-    progress_bar.progress(0, "Refreshing...")
+    if time_elapsed >= refresh_interval:
+        # Update timestamp and return True to indicate refresh needed
+        st.session_state[session_key] = now
+        
+        # Show a subtle indicator that refresh is happening
+        refresh_indicator = st.empty()
+        with refresh_indicator.container():
+            # Display a progress bar for a brief moment
+            progress = st.progress(0)
+            for i in range(10):
+                progress.progress((i + 1) * 10)
+                time.sleep(0.01)  # Very brief delay
+            
+            # Clear the progress bar
+            progress.empty()
+        
+        return True
     
-    # Simulate progress
-    for i in range(10):
-        time.sleep(0.02)  # Short delay for visual feedback
-        progress_bar.progress((i + 1) * 10, "Refreshing...")
+    # Add a countdown indicator
+    time_to_next_refresh = refresh_interval - time_elapsed
+    st.caption(f"Next refresh in {int(time_to_next_refresh)} seconds")
     
-    # Clear the progress bar
-    progress_bar.empty()
-    
-    # Always return True to force refresh
-    return True 
+    return False 

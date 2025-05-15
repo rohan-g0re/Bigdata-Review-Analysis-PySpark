@@ -194,3 +194,54 @@ Caused by: java.net.SocketTimeoutException: Accept timed out
 2025-05-14 19:59:21 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
 2025-05-14 19:59:21 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
 2025-05-14 19:59:21 - parquet_reader - INFO - Reading file in batches: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 21:01:47 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:01:47 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:02:04 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:02:04 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:02:55 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:02:55 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:03:35 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:03:35 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:03:46 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:03:46 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:09:54 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:09:54 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:17:46 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:17:46 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:17:59 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:17:59 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:26:22 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:26:22 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:27:27 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:27:27 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:28:14 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:28:14 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:33:21 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:33:21 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:33:40 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:33:40 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:33:58 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:33:58 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:35:14 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:35:14 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:35:29 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:35:29 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:35:38 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:35:38 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:36:35 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:36:35 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:58:14 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:58:14 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 21:58:14 - parquet_reader - INFO - Read schema with 18 columns
+2025-05-14 21:58:14 - parquet_reader - INFO - Reading file in batches: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 21:58:22 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 21:58:22 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 22:01:40 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 22:01:40 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 22:01:40 - parquet_reader - INFO - Reading file in batches: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 22:01:47 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 22:01:47 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 22:01:47 - parquet_reader - INFO - Reading file in batches: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 22:05:29 - parquet_reader - INFO - Scanning directory for Parquet files: data/all_reviews/cleaned_reviews
+2025-05-14 22:05:29 - parquet_reader - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 22:05:29 - parquet_reader - INFO - Reading file in batches: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet

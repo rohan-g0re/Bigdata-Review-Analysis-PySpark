@@ -168,7 +168,7 @@ class StreamAnalytics:
         try:
             file_path = os.path.join(self.results_dir, 'recent_reviews.csv')
             
-            with open(file_path, 'w', newline='', encoding='utf-8') as csvfile:
+            with open(file_path, 'w', newline='', encoding='utf-8', errors='replace') as csvfile:
                 if not self.recent_reviews:
                     return
                 
@@ -188,14 +188,29 @@ class StreamAnalytics:
                 writer.writeheader()
                 
                 for review in self.recent_reviews:
-                    # Convert timestamps to readable format
-                    if 'timestamp_created' in review and isinstance(review['timestamp_created'], int):
-                        review = review.copy()  # Don't modify the original
-                        review['timestamp_created'] = datetime.fromtimestamp(
-                            review['timestamp_created']
-                        ).strftime('%Y-%m-%d %H:%M:%S')
-                    
-                    writer.writerow(review)
+                    try:
+                        # Convert timestamps to readable format
+                        if 'timestamp_created' in review and isinstance(review['timestamp_created'], int):
+                            review = review.copy()  # Don't modify the original
+                            review['timestamp_created'] = datetime.fromtimestamp(
+                                review['timestamp_created']
+                            ).strftime('%Y-%m-%d %H:%M:%S')
+                        
+                        # Sanitize any non-string values
+                        sanitized_review = {}
+                        for key, value in review.items():
+                            if key not in columns:
+                                continue
+                            if isinstance(value, str):
+                                # Remove or replace any non-UTF-8 characters
+                                sanitized_review[key] = value.encode('utf-8', errors='replace').decode('utf-8')
+                            else:
+                                sanitized_review[key] = value
+                        
+                        writer.writerow(sanitized_review)
+                    except Exception as row_error:
+                        logger.error(f"Error processing row for CSV: {str(row_error)}")
+                        # Continue with next row
         except Exception as e:
             logger.error(f"Error saving recent reviews: {str(e)}")
     

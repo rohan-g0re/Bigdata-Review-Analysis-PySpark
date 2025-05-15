@@ -2,8 +2,12 @@ import streamlit as st
 from src.tabs.top_games_tab.ui import render_top_games_tab
 from src.tabs.game_tab.ui import render_game_info_tab
 from src.tabs.streaming_tab.ui import render_streaming_tab
-from src.utils.ui_utils import create_data_mode_toggle
+from src.utils.ui_utils import create_data_mode_toggle, create_streaming_status_indicators
 from src.streaming.config.settings import DASHBOARD_REFRESH_INTERVAL
+from src.utils.debug_utils import render_debug_ui, print_debug_summary
+
+# Debug mode flag - set to True to see debug tab
+DEBUG_MODE = True
 
 def main():
     """Main function to run the Streamlit app"""
@@ -28,23 +32,19 @@ def main():
         
         # Add system status indicator
         st.subheader("System Status")
-        st.caption("Start components with run_system.py")
+        st.caption("System status is updated automatically")
         
-        # Add status indicators for components
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown("**Producer**")
-            st.markdown("**Consumer**")
-        with col2:
-            # These would ideally be dynamically updated based on system status
-            st.markdown("⚪ Unknown")
-            st.markdown("⚪ Unknown")
+        # Add dynamic status indicators for components
+        create_streaming_status_indicators()
         
         st.divider()
         st.caption("Made with ❤️ by BigData Team")
     
-    # Create tabs
-    tab1, tab2, tab3 = st.tabs(["Top Games", "Game Info", "Streaming Analytics"])
+    # Create tabs (add debug tab if in debug mode)
+    if DEBUG_MODE:
+        tab1, tab2, tab3, tab4 = st.tabs(["Top Games", "Game Info", "Streaming Analytics", "Debug"])
+    else:
+        tab1, tab2, tab3 = st.tabs(["Top Games", "Game Info", "Streaming Analytics"])
     
     # Pass data mode to each tab
     with tab1:
@@ -55,6 +55,13 @@ def main():
         
     with tab3:
         render_streaming_tab()
+    
+    # Render debug tab if in debug mode
+    if DEBUG_MODE:
+        with tab4:
+            render_debug_ui()
+            # Also print debug info to console for easier access
+            print_debug_summary()
 
 if __name__ == "__main__":
     main() 

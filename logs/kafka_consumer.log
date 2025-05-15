@@ -160,3 +160,97 @@
 2025-05-14 20:50:17 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
 2025-05-14 20:50:17 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
 2025-05-14 20:50:17 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:54:55 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:54:55 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:54:55 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:54:55 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 21:01:47 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:01:47 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:01:47 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:01:47 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:01:47 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:02:04 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:02:04 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:02:04 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:02:04 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:02:04 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:02:55 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:02:55 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:02:55 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:02:55 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:02:55 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:03:35 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:03:35 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:03:35 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:03:35 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:03:35 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:03:46 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:03:46 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:03:46 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:03:46 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:03:46 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:09:54 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:09:54 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:09:54 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:09:54 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:09:54 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:17:46 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:17:46 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:17:46 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:17:46 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:17:46 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:17:59 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:17:59 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:17:59 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:17:59 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:17:59 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:26:22 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:26:22 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:26:22 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:26:22 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:26:22 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:27:27 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:27:27 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:27:27 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:27:27 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:27:27 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:28:14 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:28:14 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:28:14 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:28:14 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:28:14 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:33:21 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:21 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:33:21 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:33:21 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:33:21 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:33:40 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:40 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:33:40 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:33:40 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:33:40 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:33:58 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:58 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:33:58 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:33:58 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:33:58 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:35:14 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:14 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:35:14 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:35:14 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:35:14 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:35:29 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:29 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:35:29 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:35:29 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:35:29 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:35:38 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:38 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:35:38 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:35:38 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:35:38 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable
+2025-05-14 21:36:35 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:36:35 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 21:36:35 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 21:36:35 - kafka_consumer - INFO - Starting to consume messages from topic steam_reviews_stream
+2025-05-14 21:36:35 - kafka_consumer - ERROR - Error consuming from Kafka: 'MockKafkaConsumer' object is not iterable

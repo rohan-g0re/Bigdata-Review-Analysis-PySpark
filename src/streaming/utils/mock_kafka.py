@@ -15,10 +15,14 @@ logger = setup_logger("mock_kafka", "mock_kafka.log")
 _topics = {}
 _topic_lock = threading.Lock()
 
+# Global dictionary to store callbacks for topics
+_topic_callbacks = {}
+_callback_lock = threading.Lock()
+
 class MockKafkaProducer:
     """Mock implementation of KafkaProducer"""
     
-    def __init__(self, bootstrap_servers, value_serializer=None, **kwargs):
+    def __init__(self, bootstrap_servers=None, value_serializer=None, **kwargs):
         """Initialize the mock producer"""
         self.bootstrap_servers = bootstrap_servers
         self.value_serializer = value_serializer or (lambda v: json.dumps(v).encode('utf-8'))
@@ -215,3 +219,51 @@ def create_mock_topic(bootstrap_servers, topic_name, num_partitions=1, replicati
             _topics[topic_name] = queue.Queue()
             logger.info(f"Created new topic: {topic_name}")
     return True 
+
+def register_mock_consumer(topic: str, callback: Callable[[str, Dict[str, Any]], None]) -> bool:
+    """
+    Register a callback function to be called when a message is sent to a topic
+    
+    Args:
+        topic (str): Topic to subscribe to
+        callback (Callable): Function to call with (topic, message) when a message is received
+        
+    Returns:
+        bool: True if registration was successful
+    """
+    with _callback_lock:
+        if topic not in _topic_callbacks:
+            _topic_callbacks[topic] = []
+        _topic_callbacks[topic].append(callback)
+        logger.info(f"Registered callback for topic {topic}")
+        return True
+
+# Override the send method of MockKafkaProducer to also call callbacks
+original_send = MockKafkaProducer.send
+
+def new_send(self, topic, value, **kwargs):
+    """Overridden send method that also calls registered callbacks"""
+    # Call the original send method
+    result = original_send(self, topic, value, **kwargs)
+    
+    # Call any registered callbacks
+    with _callback_lock:
+        if topic in _topic_callbacks:
+            # Deserialize the value for the callbacks
+            if self.value_serializer:
+                serialized_value = self.value_serializer(value)
+                deserialized_value = json.loads(serialized_value.decode('utf-8'))
+            else:
+                deserialized_value = value
+            
+            # Call each callback
+            for callback in _topic_callbacks[topic]:
+                try:
+                    callback(topic, deserialized_value)
+                except Exception as e:
+                    logger.error(f"Error in callback for topic {topic}: {str(e)}")
+    
+    return result
+
+# Replace the original send method with our new one
+MockKafkaProducer.send = new_send 

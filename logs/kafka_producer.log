@@ -145,3 +145,104 @@
 2025-05-14 20:50:19 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
 2025-05-14 20:50:51 - kafka_producer - INFO - Interrupt received, shutting down...
 2025-05-14 20:50:56 - kafka_producer - INFO - Interrupt received, shutting down...
+2025-05-14 20:54:57 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:54:57 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:54:57 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:54:57 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:55:32 - kafka_producer - INFO - Interrupt received, shutting down...
+2025-05-14 20:55:39 - kafka_producer - INFO - Interrupt received, shutting down...
+2025-05-14 21:01:47 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:01:47 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:01:47 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:01:47 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:01:47 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:02:04 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:02:04 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:02:04 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:02:04 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:02:04 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:02:55 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:02:55 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:02:55 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:02:55 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:02:55 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:03:35 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:03:35 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:03:35 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:03:35 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:03:35 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:03:46 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:03:46 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:03:46 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:03:46 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:03:46 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:09:54 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:09:54 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:09:54 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:09:54 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:09:54 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:17:46 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:17:46 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:17:46 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:17:46 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:17:46 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:17:59 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:17:59 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:17:59 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:17:59 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:17:59 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:26:22 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:26:22 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:26:22 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:26:22 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:26:22 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:27:27 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:27:27 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:27:27 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:27:27 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:27:27 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:28:14 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:28:14 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:28:14 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:28:14 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:28:14 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:33:21 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:21 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:33:21 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:33:21 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:33:21 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:33:40 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:40 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:33:40 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:33:40 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:33:40 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:33:58 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:33:58 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:33:58 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:33:58 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:33:58 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:35:14 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:14 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:35:14 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:35:14 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:35:14 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:35:29 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:29 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:35:29 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:35:29 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:35:29 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:35:38 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:35:38 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:35:38 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:35:38 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:35:38 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:36:35 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:36:35 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:36:35 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:36:35 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:36:35 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined
+2025-05-14 21:58:22 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 21:58:22 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 21:58:22 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 21:58:22 - kafka_producer - INFO - Starting to stream Parquet data to Kafka
+2025-05-14 21:58:22 - kafka_producer - ERROR - Error streaming to Kafka: name 'threading' is not defined

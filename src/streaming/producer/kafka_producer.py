@@ -254,15 +254,18 @@ class StreamProducer:
                 # Add timestamp for latency tracking
                 review["_producer_timestamp"] = datetime.now().isoformat()
                 
+                # Process the review to ensure all fields are properly encodable
+                cleaned_review = self._sanitize_review_data(review)
+                
                 # Convert record to JSON
-                review_json = json.dumps(review)
+                review_json = json.dumps(cleaned_review)
                 msg_bytes = review_json.encode("utf-8")
                 batch_bytes += len(msg_bytes)
                 
                 # Send to Kafka
                 self.kafka_producer.send(
                     self.topic,
-                    key=str(review.get("app_id", "unknown")).encode("utf-8"),
+                    key=str(cleaned_review.get("app_id", "unknown")).encode("utf-8"),
                     value=msg_bytes
                 )
                 
@@ -293,6 +296,37 @@ class StreamProducer:
             logger.error(f"Error processing batch: {str(e)}")
             record_system_error("producer", "batch_processing_error", str(e))
             return False
+    
+    def _sanitize_review_data(self, review: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Sanitize review data to ensure all fields are properly encodable
+        
+        Args:
+            review: The original review dictionary
+            
+        Returns:
+            A sanitized version of the review
+        """
+        sanitized = {}
+        
+        for key, value in review.items():
+            if isinstance(value, (str, int, float, bool, type(None))):
+                # Basic types can be directly included
+                sanitized[key] = value
+            elif isinstance(value, (list, tuple)):
+                # For lists and tuples, process each item
+                sanitized[key] = [
+                    item if isinstance(item, (str, int, float, bool, type(None)))
+                    else str(item) for item in value
+                ]
+            elif isinstance(value, dict):
+                # Recursively process dictionaries
+                sanitized[key] = self._sanitize_review_data(value)
+            else:
+                # Convert anything else to string
+                sanitized[key] = str(value)
+                
+        return sanitized
     
     def cleanup(self):
         """Clean up resources"""
