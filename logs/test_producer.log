@@ -1,0 +1,9 @@
+2025-05-14 19:30:17 - test_producer - INFO - Using Mock Kafka implementation
+2025-05-14 19:30:17 - test_producer - INFO - Testing producer with sample data
+2025-05-14 19:30:19 - test_producer - INFO - Producer completed successfully
+2025-05-14 19:36:36 - test_producer - INFO - Using Mock Kafka implementation
+2025-05-14 19:36:36 - test_producer - INFO - Testing producer with sample data
+2025-05-14 19:36:38 - test_producer - INFO - Producer completed successfully
+2025-05-14 19:45:19 - test_producer - INFO - Using Mock Kafka implementation
+2025-05-14 19:45:19 - test_producer - INFO - Testing producer with sample data
+2025-05-14 19:45:21 - test_producer - INFO - Producer completed successfully

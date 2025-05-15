@@ -1,0 +1,162 @@
+2025-05-14 19:30:28 - kafka_consumer - ERROR - Initialization failed: signal only works in main thread of the main interpreter
+2025-05-14 19:30:28 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 19:30:47 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:30:47 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_consumer_mock
+2025-05-14 19:30:47 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:30:50 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:30:50 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:30:50 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:30:50 - kafka_consumer - INFO - Total time: 2.96 seconds
+2025-05-14 19:30:50 - kafka_consumer - INFO - Average rate: 6.75 records/second
+2025-05-14 19:30:50 - kafka_consumer - ERROR - Error saving analytics results: 'review_count'
+2025-05-14 19:30:50 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:31:14 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:31:14 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_consumer_mock
+2025-05-14 19:31:14 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:31:17 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:31:17 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:31:17 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:31:17 - kafka_consumer - INFO - Total time: 2.96 seconds
+2025-05-14 19:31:17 - kafka_consumer - INFO - Average rate: 6.75 records/second
+2025-05-14 19:31:17 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_consumer_mock
+2025-05-14 19:31:17 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:31:25 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:31:25 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_e2e
+2025-05-14 19:31:25 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:31:31 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:31:31 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:31:31 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:31:31 - kafka_consumer - INFO - Total time: 6.00 seconds
+2025-05-14 19:31:31 - kafka_consumer - INFO - Average rate: 3.33 records/second
+2025-05-14 19:31:31 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_e2e
+2025-05-14 19:31:31 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:31:55 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:31:55 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_consumer_mock
+2025-05-14 19:31:55 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:31:57 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:31:57 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:31:57 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:31:57 - kafka_consumer - INFO - Total time: 2.96 seconds
+2025-05-14 19:31:57 - kafka_consumer - INFO - Average rate: 6.75 records/second
+2025-05-14 19:31:58 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_consumer_mock
+2025-05-14 19:31:58 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:32:06 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:32:06 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_e2e
+2025-05-14 19:32:06 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:32:12 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:32:12 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:32:12 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:32:12 - kafka_consumer - INFO - Total time: 6.01 seconds
+2025-05-14 19:32:12 - kafka_consumer - INFO - Average rate: 3.33 records/second
+2025-05-14 19:32:12 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_e2e
+2025-05-14 19:32:12 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:32:44 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:32:44 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_e2e
+2025-05-14 19:32:44 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:32:50 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:32:50 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:32:50 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:32:50 - kafka_consumer - INFO - Total time: 6.00 seconds
+2025-05-14 19:32:50 - kafka_consumer - INFO - Average rate: 3.33 records/second
+2025-05-14 19:32:50 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_e2e
+2025-05-14 19:32:50 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:33:03 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:33:03 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_consumer_mock
+2025-05-14 19:33:03 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:33:10 - kafka_consumer - INFO - Reached maximum message count: 100
+2025-05-14 19:33:10 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:33:10 - kafka_consumer - INFO - Total records: 100
+2025-05-14 19:33:10 - kafka_consumer - INFO - Total time: 7.04 seconds
+2025-05-14 19:33:10 - kafka_consumer - INFO - Average rate: 14.20 records/second
+2025-05-14 19:33:10 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_consumer_mock
+2025-05-14 19:33:10 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:36:45 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:36:45 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_consumer_mock
+2025-05-14 19:36:45 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:36:48 - kafka_consumer - INFO - Reached maximum message count: 20
+2025-05-14 19:36:48 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:36:48 - kafka_consumer - INFO - Total records: 20
+2025-05-14 19:36:48 - kafka_consumer - INFO - Total time: 3.08 seconds
+2025-05-14 19:36:48 - kafka_consumer - INFO - Average rate: 6.49 records/second
+2025-05-14 19:36:48 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_consumer_mock
+2025-05-14 19:36:48 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:36:57 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:36:57 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_e2e
+2025-05-14 19:36:57 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:37:01 - kafka_consumer - INFO - Reached maximum message count: 10
+2025-05-14 19:37:01 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:37:01 - kafka_consumer - INFO - Total records: 10
+2025-05-14 19:37:01 - kafka_consumer - INFO - Total time: 4.00 seconds
+2025-05-14 19:37:01 - kafka_consumer - INFO - Average rate: 2.50 records/second
+2025-05-14 19:37:01 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_e2e
+2025-05-14 19:37:01 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:45:29 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:45:29 - kafka_consumer - INFO - Results will be saved to data/stream_results\test_e2e
+2025-05-14 19:45:29 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:45:33 - kafka_consumer - INFO - Reached maximum message count: 10
+2025-05-14 19:45:33 - kafka_consumer - INFO - Consumption completed
+2025-05-14 19:45:33 - kafka_consumer - INFO - Total records: 10
+2025-05-14 19:45:33 - kafka_consumer - INFO - Total time: 4.02 seconds
+2025-05-14 19:45:33 - kafka_consumer - INFO - Average rate: 2.49 records/second
+2025-05-14 19:45:33 - kafka_consumer - INFO - Saved analytics results to data/stream_results\test_e2e
+2025-05-14 19:45:33 - kafka_consumer - INFO - Consumer closed
+2025-05-14 19:56:29 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:56:29 - kafka_consumer - INFO - Results will be saved to data/stream_results
+2025-05-14 19:56:29 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:58:19 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:58:19 - kafka_consumer - INFO - Results will be saved to data/stream_results
+2025-05-14 19:58:19 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:59:19 - kafka_consumer - INFO - Creating Kafka consumer for localhost:9092, topic steam_reviews_stream
+2025-05-14 19:59:19 - kafka_consumer - INFO - Results will be saved to data/stream_results
+2025-05-14 19:59:19 - kafka_consumer - INFO - Starting to consume data from topic steam_reviews_stream
+2025-05-14 19:59:29 - kafka_consumer - INFO - Consumer stats: 40 records processed
+2025-05-14 19:59:29 - kafka_consumer - INFO - Average rate: 3.97 records/second
+2025-05-14 19:59:39 - kafka_consumer - INFO - Consumer stats: 90 records processed
+2025-05-14 19:59:39 - kafka_consumer - INFO - Average rate: 4.48 records/second
+2025-05-14 19:59:49 - kafka_consumer - INFO - Consumer stats: 140 records processed
+2025-05-14 19:59:49 - kafka_consumer - INFO - Average rate: 4.65 records/second
+2025-05-14 19:59:49 - kafka_consumer - INFO - Saved analytics results to data/stream_results
+2025-05-14 19:59:59 - kafka_consumer - INFO - Consumer stats: 190 records processed
+2025-05-14 19:59:59 - kafka_consumer - INFO - Average rate: 4.73 records/second
+2025-05-14 20:00:09 - kafka_consumer - INFO - Consumer stats: 240 records processed
+2025-05-14 20:00:09 - kafka_consumer - INFO - Average rate: 4.78 records/second
+2025-05-14 20:00:19 - kafka_consumer - INFO - Consumer stats: 290 records processed
+2025-05-14 20:00:19 - kafka_consumer - INFO - Average rate: 4.81 records/second
+2025-05-14 20:00:19 - kafka_consumer - INFO - Saved analytics results to data/stream_results
+2025-05-14 20:00:29 - kafka_consumer - INFO - Consumer stats: 340 records processed
+2025-05-14 20:00:29 - kafka_consumer - INFO - Average rate: 4.84 records/second
+2025-05-14 20:00:39 - kafka_consumer - INFO - Consumer stats: 390 records processed
+2025-05-14 20:00:39 - kafka_consumer - INFO - Average rate: 4.86 records/second
+2025-05-14 20:00:49 - kafka_consumer - INFO - Consumer stats: 440 records processed
+2025-05-14 20:00:49 - kafka_consumer - INFO - Average rate: 4.87 records/second
+2025-05-14 20:00:49 - kafka_consumer - INFO - Saved analytics results to data/stream_results
+2025-05-14 20:00:59 - kafka_consumer - INFO - Consumer stats: 490 records processed
+2025-05-14 20:00:59 - kafka_consumer - INFO - Average rate: 4.88 records/second
+2025-05-14 20:30:24 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:30:24 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:30:24 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:31:50 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:31:50 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:31:50 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:31:50 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:44:56 - kafka_consumer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:44:56 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:44:56 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:44:56 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:44:56 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:46:10 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:46:10 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:46:10 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:46:10 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:46:51 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:46:51 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:46:51 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:46:51 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:46:55 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:46:55 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:46:55 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:46:55 - kafka_consumer - ERROR - Failed to initialize consumer
+2025-05-14 20:50:17 - kafka_consumer - INFO - Started consumer metrics collection
+2025-05-14 20:50:17 - kafka_consumer - INFO - Analytics results will be saved to data/stream_results
+2025-05-14 20:50:17 - kafka_consumer - ERROR - Error initializing consumer: 'StreamAnalytics' object has no attribute 'initialize'
+2025-05-14 20:50:17 - kafka_consumer - ERROR - Failed to initialize consumer

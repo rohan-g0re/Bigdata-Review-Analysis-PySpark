@@ -1,0 +1,81 @@
+2025-05-14 20:30:24 - integration_test - INFO - Starting integration test: volume=small, rate=normal, duration=30s
+2025-05-14 20:30:24 - integration_test - INFO - Performance monitoring started
+2025-05-14 20:30:24 - integration_test - INFO - Test consumer started
+2025-05-14 20:30:24 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 6035.37 msgs/sec
+2025-05-14 20:30:24 - integration_test - ERROR - Consumer failed
+2025-05-14 20:30:26 - integration_test - INFO - Test producer started
+2025-05-14 20:30:26 - integration_test - INFO - Test running for 30 seconds...
+2025-05-14 20:30:26 - integration_test - ERROR - Producer failed
+2025-05-14 20:30:29 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 19.91 msgs/sec
+2025-05-14 20:30:34 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 9.97 msgs/sec
+2025-05-14 20:30:39 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 6.65 msgs/sec
+2025-05-14 20:30:44 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 4.99 msgs/sec
+2025-05-14 20:30:49 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.99 msgs/sec
+2025-05-14 20:30:54 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.33 msgs/sec
+2025-05-14 20:30:56 - integration_test - INFO - Test producer stopped
+2025-05-14 20:30:56 - integration_test - INFO - Test consumer stopping
+2025-05-14 20:30:56 - integration_test - INFO - Performance Report:
+Test Duration: 32.04 seconds
+Producer Records Sent: 0
+Producer Throughput: 0.00 records/sec
+Consumer Records Processed: 100
+Consumer Throughput: 3.12 records/sec
+Average Latency: 0.00 seconds
+Min/Max Latency: 0.00/0.00 seconds
+2025-05-14 20:30:56 - integration_test - INFO - Integration test PASSED
+2025-05-14 20:30:58 - integration_test - INFO - Performance monitoring stopped
+2025-05-14 20:30:58 - integration_test - INFO - Integration test completed
+2025-05-14 20:31:50 - integration_test - INFO - Starting integration test: volume=small, rate=normal, duration=30s
+2025-05-14 20:31:50 - integration_test - INFO - Performance monitoring started
+2025-05-14 20:31:50 - integration_test - INFO - Test consumer started
+2025-05-14 20:31:50 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 6636.14 msgs/sec
+2025-05-14 20:31:50 - integration_test - ERROR - Consumer failed
+2025-05-14 20:31:52 - integration_test - INFO - Test producer started
+2025-05-14 20:31:52 - integration_test - INFO - Test running for 30 seconds...
+2025-05-14 20:31:52 - integration_test - ERROR - Producer failed
+2025-05-14 20:31:55 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 19.92 msgs/sec
+2025-05-14 20:32:00 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 9.97 msgs/sec
+2025-05-14 20:32:05 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 6.65 msgs/sec
+2025-05-14 20:32:10 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 4.99 msgs/sec
+2025-05-14 20:32:15 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.99 msgs/sec
+2025-05-14 20:32:20 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.33 msgs/sec
+2025-05-14 20:32:22 - integration_test - INFO - Test producer stopped
+2025-05-14 20:32:22 - integration_test - INFO - Test consumer stopping
+2025-05-14 20:32:22 - integration_test - INFO - Performance Report:
+Test Duration: 32.04 seconds
+Producer Records Sent: 0
+Producer Throughput: 0.00 records/sec
+Consumer Records Processed: 100
+Consumer Throughput: 3.12 records/sec
+Average Latency: 0.00 seconds
+Min/Max Latency: 0.00/0.00 seconds
+2025-05-14 20:32:22 - integration_test - INFO - Integration test PASSED
+2025-05-14 20:32:24 - integration_test - INFO - Performance monitoring stopped
+2025-05-14 20:32:24 - integration_test - INFO - Integration test completed
+2025-05-14 20:46:55 - integration_test - INFO - Starting integration test: volume=small, rate=normal, duration=30s
+2025-05-14 20:46:55 - integration_test - INFO - Performance monitoring started
+2025-05-14 20:46:55 - integration_test - INFO - Test consumer started
+2025-05-14 20:46:55 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 7782.71 msgs/sec
+2025-05-14 20:46:55 - integration_test - ERROR - Consumer failed
+2025-05-14 20:46:57 - integration_test - INFO - Test producer started
+2025-05-14 20:46:57 - integration_test - INFO - Test running for 30 seconds...
+2025-05-14 20:46:57 - integration_test - ERROR - Producer failed
+2025-05-14 20:47:00 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 19.92 msgs/sec
+2025-05-14 20:47:05 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 9.97 msgs/sec
+2025-05-14 20:47:10 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 6.65 msgs/sec
+2025-05-14 20:47:15 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 4.99 msgs/sec
+2025-05-14 20:47:20 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.99 msgs/sec
+2025-05-14 20:47:25 - integration_test - INFO - Throughput - Producer: 0.00 msgs/sec, Consumer: 3.33 msgs/sec
+2025-05-14 20:47:27 - integration_test - INFO - Test producer stopped
+2025-05-14 20:47:27 - integration_test - INFO - Test consumer stopping
+2025-05-14 20:47:27 - integration_test - INFO - Performance Report:
+Test Duration: 32.03 seconds
+Producer Records Sent: 0
+Producer Throughput: 0.00 records/sec
+Consumer Records Processed: 100
+Consumer Throughput: 3.12 records/sec
+Average Latency: 0.00 seconds
+Min/Max Latency: 0.00/0.00 seconds
+2025-05-14 20:47:27 - integration_test - INFO - Integration test PASSED
+2025-05-14 20:47:29 - integration_test - INFO - Performance monitoring stopped
+2025-05-14 20:47:29 - integration_test - INFO - Integration test completed

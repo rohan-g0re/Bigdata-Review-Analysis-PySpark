@@ -1,0 +1,147 @@
+2025-05-14 19:30:17 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:30:17 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:30:17 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:30:17 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:30:17 - kafka_producer - INFO - Reading sample of 10 records
+2025-05-14 19:30:17 - kafka_producer - INFO - Sending 10 sample records to topic steam_reviews_stream
+2025-05-14 19:30:19 - kafka_producer - INFO - Sample of 10 records sent successfully
+2025-05-14 19:30:19 - kafka_producer - INFO - Producer closed
+2025-05-14 19:30:30 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:30:30 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:30:30 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:30:30 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:30:30 - kafka_producer - INFO - Reading sample of 20 records
+2025-05-14 19:30:30 - kafka_producer - INFO - Sending 20 sample records to topic steam_reviews_stream
+2025-05-14 19:30:34 - kafka_producer - INFO - Sample of 20 records sent successfully
+2025-05-14 19:30:34 - kafka_producer - INFO - Producer closed
+2025-05-14 19:31:27 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:31:27 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:31:27 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:31:27 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:31:27 - kafka_producer - INFO - Reading sample of 20 records
+2025-05-14 19:31:27 - kafka_producer - INFO - Sending 20 sample records to topic steam_reviews_stream
+2025-05-14 19:31:31 - kafka_producer - INFO - Sample of 20 records sent successfully
+2025-05-14 19:31:31 - kafka_producer - INFO - Producer closed
+2025-05-14 19:32:08 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:32:08 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:32:08 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:32:08 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:32:08 - kafka_producer - INFO - Reading sample of 20 records
+2025-05-14 19:32:08 - kafka_producer - INFO - Sending 20 sample records to topic steam_reviews_stream
+2025-05-14 19:32:12 - kafka_producer - INFO - Sample of 20 records sent successfully
+2025-05-14 19:32:12 - kafka_producer - INFO - Producer closed
+2025-05-14 19:32:46 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:32:46 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:32:46 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:32:46 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:32:46 - kafka_producer - INFO - Reading sample of 20 records
+2025-05-14 19:32:46 - kafka_producer - INFO - Sending 20 sample records to topic steam_reviews_stream
+2025-05-14 19:32:50 - kafka_producer - INFO - Sample of 20 records sent successfully
+2025-05-14 19:32:50 - kafka_producer - INFO - Producer closed
+2025-05-14 19:36:36 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:36:36 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:36:36 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:36:36 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:36:36 - kafka_producer - INFO - Reading sample of 10 records
+2025-05-14 19:36:36 - kafka_producer - INFO - Sending 10 sample records to topic steam_reviews_stream
+2025-05-14 19:36:38 - kafka_producer - INFO - Sample of 10 records sent successfully
+2025-05-14 19:36:38 - kafka_producer - INFO - Producer closed
+2025-05-14 19:36:59 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:36:59 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:36:59 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:36:59 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:36:59 - kafka_producer - INFO - Reading sample of 10 records
+2025-05-14 19:36:59 - kafka_producer - INFO - Sending 10 sample records to topic steam_reviews_stream
+2025-05-14 19:37:01 - kafka_producer - INFO - Sample of 10 records sent successfully
+2025-05-14 19:37:01 - kafka_producer - INFO - Producer closed
+2025-05-14 19:45:19 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:45:19 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:45:19 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:45:19 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:45:19 - kafka_producer - INFO - Reading sample of 10 records
+2025-05-14 19:45:19 - kafka_producer - INFO - Sending 10 sample records to topic steam_reviews_stream
+2025-05-14 19:45:21 - kafka_producer - INFO - Sample of 10 records sent successfully
+2025-05-14 19:45:21 - kafka_producer - INFO - Producer closed
+2025-05-14 19:45:31 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:45:31 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:45:31 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:45:31 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:45:31 - kafka_producer - INFO - Reading sample of 10 records
+2025-05-14 19:45:31 - kafka_producer - INFO - Sending 10 sample records to topic steam_reviews_stream
+2025-05-14 19:45:33 - kafka_producer - INFO - Sample of 10 records sent successfully
+2025-05-14 19:45:33 - kafka_producer - INFO - Producer closed
+2025-05-14 19:56:22 - kafka_producer - ERROR - Initialization failed: signal only works in main thread of the main interpreter
+2025-05-14 19:56:22 - kafka_producer - ERROR - Failed to initialize producer
+2025-05-14 19:58:21 - kafka_producer - ERROR - Initialization failed: signal only works in main thread of the main interpreter
+2025-05-14 19:58:21 - kafka_producer - ERROR - Failed to initialize producer
+2025-05-14 19:58:46 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:58:46 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:58:46 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:58:46 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:58:46 - kafka_producer - INFO - Starting to stream data to topic steam_reviews_stream
+2025-05-14 19:58:46 - kafka_producer - INFO - Using throttle rate of 0.2 seconds between batches
+2025-05-14 19:58:46 - kafka_producer - INFO - Processing file 1: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 19:59:21 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 19:59:21 - kafka_producer - INFO - Creating Kafka producer for localhost:9092
+2025-05-14 19:59:21 - kafka_producer - INFO - Creating Parquet reader for data/all_reviews/cleaned_reviews
+2025-05-14 19:59:21 - kafka_producer - INFO - Found 167 Parquet files, total size: 18630.51 MB
+2025-05-14 19:59:21 - kafka_producer - INFO - Starting to stream data to topic steam_reviews_stream
+2025-05-14 19:59:21 - kafka_producer - INFO - Using throttle rate of 0.2 seconds between batches
+2025-05-14 19:59:21 - kafka_producer - INFO - Processing file 1: part-00000-d957a16a-cc69-4a83-bdce-cd061032ade9-c000.snappy.parquet
+2025-05-14 20:00:26 - kafka_producer - INFO - Streaming stats: 500 records, 1 batches, 1 files
+2025-05-14 20:00:26 - kafka_producer - INFO - Average rate: 4.98 records/second
+2025-05-14 20:00:26 - kafka_producer - INFO - Reached maximum record count: 10
+2025-05-14 20:00:26 - kafka_producer - INFO - Stream completed
+2025-05-14 20:00:26 - kafka_producer - INFO - Total records: 500
+2025-05-14 20:00:26 - kafka_producer - INFO - Total batches: 1
+2025-05-14 20:00:26 - kafka_producer - INFO - Total files: 1
+2025-05-14 20:00:26 - kafka_producer - INFO - Total time: 100.49 seconds
+2025-05-14 20:00:26 - kafka_producer - INFO - Average rate: 4.98 records/second
+2025-05-14 20:00:26 - kafka_producer - INFO - Producer closed
+2025-05-14 20:01:02 - kafka_producer - INFO - Streaming stats: 500 records, 1 batches, 1 files
+2025-05-14 20:01:02 - kafka_producer - INFO - Average rate: 4.98 records/second
+2025-05-14 20:01:02 - kafka_producer - INFO - Reached maximum record count: 10
+2025-05-14 20:01:02 - kafka_producer - INFO - Stream completed
+2025-05-14 20:01:02 - kafka_producer - INFO - Total records: 500
+2025-05-14 20:01:02 - kafka_producer - INFO - Total batches: 1
+2025-05-14 20:01:02 - kafka_producer - INFO - Total files: 1
+2025-05-14 20:01:02 - kafka_producer - INFO - Total time: 100.46 seconds
+2025-05-14 20:01:02 - kafka_producer - INFO - Average rate: 4.98 records/second
+2025-05-14 20:01:02 - kafka_producer - INFO - Producer closed
+2025-05-14 20:30:26 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:30:26 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:30:26 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:31:52 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:31:52 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:31:52 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:44:53 - kafka_producer - INFO - Using Mock Kafka implementation
+2025-05-14 20:44:53 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:44:53 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:44:53 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:44:53 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:46:12 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:46:12 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:46:12 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:46:12 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:46:31 - kafka_producer - INFO - Using Mock Kafka implementation
+2025-05-14 20:46:31 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:46:31 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:46:31 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:46:40 - kafka_producer - INFO - Using Mock Kafka implementation
+2025-05-14 20:46:40 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:46:40 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:46:40 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:46:40 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:46:53 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:46:53 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:46:53 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:46:53 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:46:57 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:46:57 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:46:57 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:50:19 - kafka_producer - INFO - Set up interrupt handler in main thread
+2025-05-14 20:50:19 - kafka_producer - INFO - Ensuring Kafka topic exists: steam_reviews_stream
+2025-05-14 20:50:19 - kafka_producer - INFO - Started producer metrics collection
+2025-05-14 20:50:19 - kafka_producer - ERROR - Error streaming to Kafka: MockKafkaProducer.__init__() missing 1 required positional argument: 'bootstrap_servers'
+2025-05-14 20:50:51 - kafka_producer - INFO - Interrupt received, shutting down...
+2025-05-14 20:50:56 - kafka_producer - INFO - Interrupt received, shutting down...

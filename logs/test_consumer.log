@@ -1,0 +1,102 @@
+2025-05-14 19:30:28 - test_consumer - INFO - Starting consumer test in e2e mode with 20 samples
+2025-05-14 19:30:28 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:30:30 - test_consumer - INFO - Starting producer...
+2025-05-14 19:30:34 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:30:36 - test_consumer - INFO - Results directory contains: []
+2025-05-14 19:30:36 - test_consumer - ERROR - End-to-end test failed: Consumer did not create expected output files
+2025-05-14 19:30:36 - test_consumer - INFO - Test completed: FAILURE
+2025-05-14 19:30:47 - test_consumer - INFO - Starting consumer test in mock mode with 20 samples
+2025-05-14 19:30:47 - test_consumer - INFO - Generating 20 mock review records
+2025-05-14 19:30:50 - test_consumer - INFO - Sent 20 mock reviews to Kafka
+2025-05-14 19:30:52 - test_consumer - INFO - Results directory contains: ['top_games.csv']
+2025-05-14 19:30:52 - test_consumer - ERROR - Test failed: Consumer did not create expected output files
+2025-05-14 19:30:52 - test_consumer - INFO - Test completed: FAILURE
+2025-05-14 19:31:14 - test_consumer - INFO - Starting consumer test in mock mode with 20 samples
+2025-05-14 19:31:14 - test_consumer - INFO - Generating 20 mock review records
+2025-05-14 19:31:17 - test_consumer - INFO - Sent 20 mock reviews to Kafka
+2025-05-14 19:31:19 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:31:19 - test_consumer - INFO - Test successful: Consumer processed data and created output files
+2025-05-14 19:31:19 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:31:25 - test_consumer - INFO - Starting consumer test in e2e mode with 20 samples
+2025-05-14 19:31:25 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:31:27 - test_consumer - INFO - Starting producer...
+2025-05-14 19:31:31 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:31:33 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:31:33 - test_consumer - INFO - End-to-end test successful: Data flowed from producer to consumer
+2025-05-14 19:31:33 - test_consumer - INFO - Top games: 
+   game_id  review_count
+0      NaN            20
+2025-05-14 19:31:33 - test_consumer - INFO - Sentiment analysis: 
+   game_id  review_count  avg_sentiment
+0      NaN            20            0.0
+2025-05-14 19:31:33 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:31:55 - test_consumer - INFO - Starting consumer test in mock mode with 20 samples
+2025-05-14 19:31:55 - test_consumer - INFO - Generating 20 mock review records
+2025-05-14 19:31:58 - test_consumer - INFO - Sent 20 mock reviews to Kafka
+2025-05-14 19:32:00 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:32:00 - test_consumer - INFO - Test successful: Consumer processed data and created output files
+2025-05-14 19:32:00 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:32:06 - test_consumer - INFO - Starting consumer test in e2e mode with 20 samples
+2025-05-14 19:32:06 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:32:08 - test_consumer - INFO - Starting producer...
+2025-05-14 19:32:12 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:32:14 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:32:14 - test_consumer - INFO - End-to-end test successful: Data flowed from producer to consumer
+2025-05-14 19:32:14 - test_consumer - INFO - Top games: 
+   game_id  review_count
+0      NaN            20
+2025-05-14 19:32:14 - test_consumer - INFO - Sentiment analysis: 
+   game_id  review_count  avg_sentiment
+0      NaN            20            0.0
+2025-05-14 19:32:14 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:32:44 - test_consumer - INFO - Starting consumer test in e2e mode with 20 samples
+2025-05-14 19:32:44 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:32:46 - test_consumer - INFO - Starting producer...
+2025-05-14 19:32:50 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:32:52 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:32:52 - test_consumer - INFO - End-to-end test successful: Data flowed from producer to consumer
+2025-05-14 19:32:52 - test_consumer - INFO - Top games: 
+          game_id  review_count
+0  Counter-Strike            20
+2025-05-14 19:32:52 - test_consumer - INFO - Sentiment analysis: 
+          game_id  review_count  avg_sentiment
+0  Counter-Strike            20            0.0
+2025-05-14 19:32:52 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:33:03 - test_consumer - INFO - Starting consumer test in mock mode with 100 samples
+2025-05-14 19:33:03 - test_consumer - INFO - Generating 100 mock review records
+2025-05-14 19:33:10 - test_consumer - INFO - Sent 100 mock reviews to Kafka
+2025-05-14 19:33:12 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:33:12 - test_consumer - INFO - Test successful: Consumer processed data and created output files
+2025-05-14 19:33:12 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:36:45 - test_consumer - INFO - Starting consumer test in mock mode with 20 samples
+2025-05-14 19:36:45 - test_consumer - INFO - Generating 20 mock review records
+2025-05-14 19:36:48 - test_consumer - INFO - Sent 20 mock reviews to Kafka
+2025-05-14 19:36:50 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:36:50 - test_consumer - INFO - Test successful: Consumer processed data and created output files
+2025-05-14 19:36:50 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:36:57 - test_consumer - INFO - Starting consumer test in e2e mode with 10 samples
+2025-05-14 19:36:57 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:36:59 - test_consumer - INFO - Starting producer...
+2025-05-14 19:37:01 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:37:03 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:37:03 - test_consumer - INFO - End-to-end test successful: Data flowed from producer to consumer
+2025-05-14 19:37:03 - test_consumer - INFO - Top games: 
+          game_id  review_count
+0  Counter-Strike            10
+2025-05-14 19:37:03 - test_consumer - INFO - Sentiment analysis: 
+          game_id  review_count  avg_sentiment
+0  Counter-Strike            10            0.0
+2025-05-14 19:37:03 - test_consumer - INFO - Test completed: SUCCESS
+2025-05-14 19:45:29 - test_consumer - INFO - Starting consumer test in e2e mode with 10 samples
+2025-05-14 19:45:29 - test_consumer - INFO - Starting consumer thread...
+2025-05-14 19:45:31 - test_consumer - INFO - Starting producer...
+2025-05-14 19:45:33 - test_consumer - INFO - Waiting for consumer to process all messages...
+2025-05-14 19:45:35 - test_consumer - INFO - Results directory contains: ['recent_reviews.csv', 'sentiment_analysis.csv', 'time_distribution.csv', 'top_games.csv']
+2025-05-14 19:45:35 - test_consumer - INFO - End-to-end test successful: Data flowed from producer to consumer
+2025-05-14 19:45:35 - test_consumer - INFO - Top games: 
+          game_id  review_count
+0  Counter-Strike            10
+2025-05-14 19:45:35 - test_consumer - INFO - Sentiment analysis: 
+          game_id  review_count  avg_sentiment
+0  Counter-Strike            10            0.0
+2025-05-14 19:45:35 - test_consumer - INFO - Test completed: SUCCESS

@@ -1,9 +1,33 @@
-streamlit>=1.28.0
-pyspark>=3.4.0
-pyarrow>=12.0.0
-pandas>=2.0.0
-numpy>=1.24.0
-plotly>=5.15.0
-transformers[torch]==4.35.0
-torch>=2.0.0
-scikit-learn>=1.2.0 
+# Core libraries
+pandas==1.5.3
+numpy==1.24.3
+pyarrow==12.0.1
+fsspec==2023.5.0
+
+# Kafka and streaming
+kafka-python==2.0.2
+confluent-kafka==2.1.1
+
+# Visualization
+streamlit==1.22.0
+plotly==5.14.1
+altair==5.0.1
+matplotlib==3.7.1
+
+# Data analysis
+scikit-learn==1.2.2
+textblob==0.17.1
+nltk==3.8.1
+
+# System monitoring
+psutil==5.9.5
+
+# Utilities
+python-dotenv==1.0.0
+tqdm==4.65.0
+pyyaml==6.0
+
+# Streaming dependencies
+python-dotenv>=1.0.0
+tqdm>=4.66.1  # For progress tracking in producer
+pytest>=7.4.0  # For testing 

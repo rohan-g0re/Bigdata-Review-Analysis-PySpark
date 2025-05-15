@@ -1,0 +1,102 @@
+2025-05-14 19:11:10 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:11:10 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:11:11 - mock_kafka - INFO - Closed producer
+2025-05-14 19:11:13 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:12:00 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:12:00 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:12:01 - mock_kafka - INFO - Closed producer
+2025-05-14 19:12:03 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:12:33 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:12:41 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:12:41 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:12:42 - mock_kafka - INFO - Closed producer
+2025-05-14 19:12:44 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:12:49 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:13:07 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:13:07 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:13:08 - mock_kafka - INFO - Closed producer
+2025-05-14 19:13:10 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:13:15 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:13:20 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:15:55 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:15:55 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:15:55 - mock_kafka - INFO - Closed producer
+2025-05-14 19:15:57 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:16:02 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:30:17 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:30:17 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:30:19 - mock_kafka - INFO - Closed producer
+2025-05-14 19:30:30 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:30:30 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:30:34 - mock_kafka - INFO - Closed producer
+2025-05-14 19:30:47 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:30:47 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:30:47 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:30:50 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:31:14 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:31:14 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:31:14 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:31:17 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:31:25 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:31:25 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:31:27 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:31:31 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:31:31 - mock_kafka - INFO - Closed producer
+2025-05-14 19:31:55 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:31:55 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:31:55 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:31:58 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:32:06 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:32:06 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:32:08 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:32:12 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:32:12 - mock_kafka - INFO - Closed producer
+2025-05-14 19:32:44 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:32:44 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:32:46 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:32:50 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:32:50 - mock_kafka - INFO - Closed producer
+2025-05-14 19:33:03 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:33:03 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:33:03 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:33:10 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:36:36 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:36:36 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:36:38 - mock_kafka - INFO - Closed producer
+2025-05-14 19:36:45 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:36:45 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:36:45 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:36:48 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:36:57 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:36:57 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:36:59 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:37:01 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:37:01 - mock_kafka - INFO - Closed producer
+2025-05-14 19:45:19 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:45:19 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:45:21 - mock_kafka - INFO - Closed producer
+2025-05-14 19:45:29 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:45:29 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:45:31 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:45:33 - mock_kafka - INFO - Closed consumer
+2025-05-14 19:45:33 - mock_kafka - INFO - Closed producer
+2025-05-14 19:56:29 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:56:29 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:58:19 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:58:19 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:58:46 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:58:46 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 19:59:19 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 19:59:19 - mock_kafka - INFO - Created Mock Kafka consumer for topics ['steam_reviews_stream'] with group ID steam_reviews_group
+2025-05-14 19:59:21 - mock_kafka - INFO - Created Mock Kafka producer with bootstrap servers: localhost:9092
+2025-05-14 20:00:26 - mock_kafka - INFO - Closed producer
+2025-05-14 20:01:02 - mock_kafka - INFO - Closed producer
+2025-05-14 20:30:26 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:31:52 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:44:53 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:46:12 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:46:31 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:46:40 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:46:53 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:46:57 - mock_kafka - INFO - Created new topic: steam_reviews_stream
+2025-05-14 20:50:19 - mock_kafka - INFO - Created new topic: steam_reviews_stream

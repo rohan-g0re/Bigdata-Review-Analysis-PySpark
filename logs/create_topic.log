@@ -1,0 +1,2 @@
+2025-05-14 18:59:14 - create_topic - ERROR - Failed to create topic 'steam_reviews_stream': NoBrokersAvailable
+2025-05-14 19:13:20 - create_topic - INFO - Using Mock Kafka implementation

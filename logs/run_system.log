@@ -1,0 +1,68 @@
+2025-05-14 19:56:22 - run_system - INFO - Setting up producer...
+2025-05-14 19:56:22 - run_system - INFO - Starting producer thread
+2025-05-14 19:56:22 - run_system - INFO - Producer completed with result: False
+2025-05-14 19:56:22 - run_system - INFO - System shutdown complete
+2025-05-14 19:56:29 - run_system - INFO - Setting up consumer...
+2025-05-14 19:56:29 - run_system - INFO - Starting consumer thread
+2025-05-14 19:57:31 - run_system - INFO - Starting Streamlit dashboard
+2025-05-14 19:57:31 - run_system - INFO - Streamlit dashboard started (PID: 18172)
+2025-05-14 19:57:31 - run_system - INFO - Running until interrupted (press Ctrl+C to stop)...
+2025-05-14 19:58:19 - run_system - INFO - Setting up consumer...
+2025-05-14 19:58:19 - run_system - INFO - Starting consumer thread
+2025-05-14 19:58:21 - run_system - INFO - Starting Streamlit dashboard
+2025-05-14 19:58:21 - run_system - INFO - Streamlit dashboard started (PID: 21728)
+2025-05-14 19:58:21 - run_system - INFO - Setting up producer...
+2025-05-14 19:58:21 - run_system - INFO - Starting producer thread
+2025-05-14 19:58:21 - run_system - INFO - Producer completed with result: False
+2025-05-14 19:58:23 - run_system - INFO - System shutdown complete
+2025-05-14 19:58:46 - run_system - INFO - Setting up producer...
+2025-05-14 19:58:46 - run_system - INFO - Starting producer thread
+2025-05-14 19:59:19 - run_system - INFO - Setting up consumer...
+2025-05-14 19:59:19 - run_system - INFO - Starting consumer thread
+2025-05-14 19:59:21 - run_system - INFO - Starting Streamlit dashboard
+2025-05-14 19:59:21 - run_system - INFO - Streamlit dashboard started (PID: 14860)
+2025-05-14 19:59:21 - run_system - INFO - Setting up producer...
+2025-05-14 19:59:21 - run_system - INFO - Starting producer thread
+2025-05-14 20:00:26 - run_system - INFO - Producer completed with result: True
+2025-05-14 20:00:26 - run_system - INFO - System shutdown complete
+2025-05-14 20:01:02 - run_system - INFO - Producer completed with result: True
+2025-05-14 20:01:04 - run_system - INFO - System shutdown complete
+2025-05-14 20:46:10 - run_system - INFO - Started metrics collection
+2025-05-14 20:46:10 - run_system - INFO - Starting monitoring dashboard on port 8502
+2025-05-14 20:46:10 - run_system - INFO - Monitoring dashboard started at http://localhost:8502
+2025-05-14 20:46:10 - run_system - INFO - Starting dashboard on port 8501
+2025-05-14 20:46:10 - run_system - INFO - Dashboard started at http://localhost:8501
+2025-05-14 20:46:10 - run_system - INFO - Starting consumer component
+2025-05-14 20:46:10 - run_system - INFO - Started consumer thread
+2025-05-14 20:46:10 - run_system - ERROR - Consumer failed
+2025-05-14 20:46:12 - run_system - INFO - Starting producer component
+2025-05-14 20:46:12 - run_system - ERROR - Producer failed
+2025-05-14 20:46:12 - run_system - INFO - Producer finished but keeping system running for dashboards...
+2025-05-14 20:46:51 - run_system - INFO - Started metrics collection
+2025-05-14 20:46:51 - run_system - INFO - Starting monitoring dashboard on port 8502
+2025-05-14 20:46:51 - run_system - INFO - Monitoring dashboard started at http://localhost:8502
+2025-05-14 20:46:51 - run_system - INFO - Starting dashboard on port 8501
+2025-05-14 20:46:51 - run_system - INFO - Dashboard started at http://localhost:8501
+2025-05-14 20:46:51 - run_system - INFO - Starting consumer component
+2025-05-14 20:46:51 - run_system - INFO - Started consumer thread
+2025-05-14 20:46:51 - run_system - ERROR - Consumer failed
+2025-05-14 20:46:53 - run_system - INFO - Starting producer component
+2025-05-14 20:46:53 - run_system - ERROR - Producer failed
+2025-05-14 20:47:00 - run_system - INFO - Stopped metrics collection
+2025-05-14 20:47:00 - run_system - INFO - Terminating monitor process
+2025-05-14 20:47:00 - run_system - INFO - Terminating dashboard process
+2025-05-14 20:47:00 - run_system - INFO - All components shut down
+2025-05-14 20:50:17 - run_system - INFO - Started metrics collection
+2025-05-14 20:50:17 - run_system - INFO - Starting dashboard on port 8501
+2025-05-14 20:50:17 - run_system - INFO - Dashboard started at http://localhost:8501
+2025-05-14 20:50:17 - run_system - INFO - Starting consumer component
+2025-05-14 20:50:17 - run_system - INFO - Started consumer thread
+2025-05-14 20:50:17 - run_system - ERROR - Consumer failed
+2025-05-14 20:50:19 - run_system - INFO - Starting producer component
+2025-05-14 20:50:19 - run_system - ERROR - Producer failed
+2025-05-14 20:50:19 - run_system - INFO - Producer finished but keeping system running for dashboards...
+2025-05-14 20:50:52 - run_system - INFO - Received interrupt signal. Shutting down...
+2025-05-14 20:50:57 - run_system - INFO - Received interrupt signal. Shutting down...
+2025-05-14 20:51:01 - run_system - INFO - Stopped metrics collection
+2025-05-14 20:51:01 - run_system - INFO - Terminating dashboard process
+2025-05-14 20:51:01 - run_system - INFO - All components shut down
