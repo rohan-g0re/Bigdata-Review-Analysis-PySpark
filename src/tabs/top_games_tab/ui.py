@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
-from src.utils.spark_session import get_spark_session
-from src.tabs.top_games_tab.analysis import get_top_k_games_by_reviews
+from utils.spark_session import get_spark_session
+from tabs.top_games_tab.analysis import get_top_k_games_by_reviews
 import os
 
 def render_top_games_tab():

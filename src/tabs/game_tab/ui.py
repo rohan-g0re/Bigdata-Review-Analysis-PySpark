@@ -4,9 +4,9 @@ import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime, timedelta
 import os
-from src.utils.spark_session import get_spark_session
-from src.tabs.game_tab.analysis import get_game_info
-from src.tabs.game_tab.visualization import (
+from utils.spark_session import get_spark_session
+from tabs.game_tab.analysis import get_game_info
+from tabs.game_tab.visualization import (
     create_time_series_plot, 
     create_acquisition_pie_chart, 
     display_review_cards,
@@ -14,7 +14,7 @@ from src.tabs.game_tab.visualization import (
     display_sentiment_reviews,
     create_sentiment_distribution_chart
 )
-from src.utils.constants import LANGUAGES, LANGUAGE_DISPLAY_NAMES
+from utils.constants import LANGUAGES, LANGUAGE_DISPLAY_NAMES
 
 def filter_reviews_by_language(reviews_df, language):
     """Filter reviews DataFrame by language.

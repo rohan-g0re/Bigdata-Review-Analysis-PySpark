@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 from pyspark.sql.functions import col, avg, round as spark_round, to_date, count, date_format, sum as spark_sum
-from src.utils.data_processing import truncate_text
-from src.tabs.game_tab.sentiment_analysis import load_sentiment_model, analyze_sentiment_batch, get_overall_sentiment, get_extreme_reviews
+from utils.data_processing import truncate_text
+from tabs.game_tab.sentiment_analysis import load_sentiment_model, analyze_sentiment_batch, get_overall_sentiment, get_extreme_reviews
 
 def get_game_info(spark, parquet_dir, game_name, start_date=None, end_date=None):
     """

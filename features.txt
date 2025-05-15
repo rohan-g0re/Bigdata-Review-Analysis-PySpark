@@ -1,0 +1,37 @@
+Existing features-
+
+Top Games tab-
+User input- n number of games-
+
+Output- top n reviewd games in the whole dataset.
+
+To add- a time frame from user
+
+Output-
+Get top n reviwed games per year in that time frame 
+Plot a graph to display.
+Drop down option to select the language.
+Get the top n comments per year in that language.
+
+
+Game info tab-
+Game name, time frame 
+
+Results-
+Total reviews
+Average playtime at reviews
+Early Access Reviews 
+Sentiment Rating 
+
+Daily review graph for the Game
+
+Pie chart showing if game was mostly purchased or free
+
+Sentiment analysis review - displays 10 reviews
+most upvoted positive 
+most upvoted negative 
+
+Dropdown for filtering reviews by Languages
+-Top views by upvotes
+
+
