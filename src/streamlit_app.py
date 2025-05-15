@@ -1,5 +1,5 @@
 import streamlit as st
-from src.tabs.top_games_tab.ui import render_top_games_tab
+from src.tabs.engagement_tab.ui import render_engagement_tab
 from src.tabs.game_tab.ui import render_game_info_tab
 
 def main():
@@ -9,10 +9,10 @@ def main():
     st.title("Steam Game Reviews Analysis")
     
     # Create tabs
-    tab1, tab2 = st.tabs(["Top Games", "Game Info"])
+    tab1, tab2 = st.tabs(["Engagement", "Game Info"])
     
     with tab1:
-        render_top_games_tab()
+        render_engagement_tab()
     
     with tab2:
         render_game_info_tab()

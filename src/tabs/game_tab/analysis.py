@@ -94,7 +94,7 @@ def get_game_info(spark, parquet_dir, game_name, start_date=None, end_date=None)
             all_reviews = game_df.select(
                 "author_steamid", "review", "votes_up", "votes_funny", "timestamp_created", 
                 "author_playtime_at_review", "language"
-            ).collect()
+            ).orderBy(col("votes_up").desc()).collect()
             
             # Convert to pandas DataFrame with all columns
             all_reviews_df = pd.DataFrame([
@@ -118,27 +118,11 @@ def get_game_info(spark, parquet_dir, game_name, start_date=None, end_date=None)
             sample_size = min(len(all_reviews_df), max_reviews_to_analyze)
             
             # Create a progress bar
-            progress_text = f"Analyzing sentiment of {sample_size} reviews"
+            progress_text = f"Analyzing sentiment of top {sample_size} upvoted reviews"
             progress_bar = st.progress(0, text=progress_text)
             
-            # Select a representative sample - include English reviews first if available
-            if 'english' in all_reviews_df['language'].values:
-                # Get English reviews first (they usually have better sentiment analysis results)
-                english_reviews = all_reviews_df[all_reviews_df['language'] == 'english']
-                english_sample_size = min(len(english_reviews), int(sample_size * 0.7))  # Use up to 70% English reviews
-                
-                # Get other languages for the rest of the sample
-                non_english = all_reviews_df[all_reviews_df['language'] != 'english']
-                other_sample_size = sample_size - english_sample_size
-                
-                # Combine the samples
-                review_sample = pd.concat([
-                    english_reviews.sample(english_sample_size) if len(english_reviews) > english_sample_size else english_reviews,
-                    non_english.sample(other_sample_size) if len(non_english) > other_sample_size else non_english
-                ])
-            else:
-                # If no English reviews, just take a random sample
-                review_sample = all_reviews_df.sample(sample_size) if len(all_reviews_df) > sample_size else all_reviews_df
+            # Instead of random sampling, use the top upvoted reviews (already sorted)
+            review_sample = all_reviews_df.head(sample_size)
             
             # Extract review texts for analysis
             review_texts = review_sample["review_text"].tolist()

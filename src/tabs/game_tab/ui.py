@@ -50,10 +50,10 @@ def render_game_info_tab():
     default_start_date = default_end_date - timedelta(days=365*5)
     
     with col1:
-        start_date = st.date_input("Start Date", value=default_start_date)
+        start_date = st.date_input("Start Date", value=default_start_date, key="game_start_date")
     
     with col2:
-        end_date = st.date_input("End Date", value=default_end_date)
+        end_date = st.date_input("End Date", value=default_end_date, key="game_end_date")
     
     # Convert date inputs to datetime objects
     start_datetime = datetime.combine(start_date, datetime.min.time())
@@ -140,7 +140,7 @@ def render_game_info_tab():
         # Add sentiment analysis section
         if 'sentiment_score' in game_info:
             st.subheader("Review Sentiment Analysis")
-            st.caption(f"Based on {game_info.get('sentiment_analyzed_count', 0):,} analyzed reviews")
+            st.caption(f"Based on top {game_info.get('sentiment_analyzed_count', 0):,} most upvoted reviews")
             
             # Create two columns for sentiment charts
             sentiment_col1, sentiment_col2 = st.columns(2)
@@ -160,7 +160,7 @@ def render_game_info_tab():
                     - **-0.6 to -0.2**: Negative - Players generally dislike the game
                     - **< -0.6**: Very Negative - Players strongly dislike the game
                     
-                    This analysis is performed using an AI language model that evaluates the emotional tone of each review.
+                    This analysis is performed on the most upvoted reviews using an AI language model that evaluates the emotional tone of each review.
                     """)
         
         # Add time series plot and acquisition method pie chart side by side

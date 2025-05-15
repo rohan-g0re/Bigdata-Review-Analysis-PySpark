@@ -1,1 +1,0 @@
-# This file makes the top_games_tab directory a Python package 
