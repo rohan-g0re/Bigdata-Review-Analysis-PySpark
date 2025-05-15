@@ -282,7 +282,7 @@ def render_game_info_tab():
                 """)
         
             # Most upvoted positive and negative reviews
-            st.subheader("Most Upvoted Reviews by Sentiment")
+            # st.subheader("Most Upvoted Reviews by Sentiment")
             
             pos_col, neg_col = st.columns(2)
             

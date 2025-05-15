@@ -1,5 +1,8 @@
 import streamlit as st
 import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
 from datetime import datetime, timedelta
 from src.utils.spark_session import get_spark_session
 from src.tabs.engagement_tab.analysis import get_all_engagement_metrics
@@ -73,39 +76,7 @@ def render_engagement_tab():
         # Display top games results
         top_games = results["top_games"]
         if top_games is not None and not top_games.empty:
-            # Display results
-            st.subheader(f"Top {len(top_games)} Games by Review Count")
-            st.caption(f"Data filtered from {start_date} to {end_date}")
-            
-            # Display as a table with custom column config to reduce width
-            st.dataframe(
-                top_games,
-                column_config={
-                    "game": st.column_config.TextColumn("Game", width="medium"),
-                    "count": st.column_config.NumberColumn("Review Count", width="small")
-                },
-                hide_index=True,
-                use_container_width=False
-            )
-            
-            # Create bar chart with reduced width
-            fig = px.bar(
-                top_games,
-                x="game",
-                y="count",
-                title=f"Top Games by Review Count",
-                labels={"game": "Game Name", "count": "Number of Reviews"},
-                color="game",
-                text="count"
-            )
-            fig.update_layout(
-                xaxis_tickangle=45,
-                width=700,  # Set a fixed width
-                height=500
-            )
-            st.plotly_chart(fig, use_container_width=False)
-            
-            # Show statistics
+            # Show statistics ABOVE the treemap
             st.subheader("Game Statistics")
             col1, col2, col3 = st.columns(3)
             with col1:
@@ -115,89 +86,148 @@ def render_engagement_tab():
             with col3:
                 avg_reviews = int(top_games["count"].mean())
                 st.metric("Average Reviews (Top Games)", f"{avg_reviews:,}")
+            
+            # Display treemap below the statistics
+            st.subheader(f"Top {len(top_games)} Games by Review Count")
+            
+            # Create treemap
+            fig_treemap = px.treemap(
+                top_games,
+                path=["game"],
+                values="count",
+                color="count",
+                color_continuous_scale="Viridis",
+                hover_data=["game", "count"]
+            )
+            fig_treemap.update_layout(
+                height=600,  # Increased height for better visibility
+                font=dict(size=16)  # Increase base font size throughout the figure
+            )
+            fig_treemap.update_traces(
+                textinfo="label+value+percent root",
+                hovertemplate='<b>%{label}</b><br>Reviews: %{value}<br>Percentage: %{percentRoot:.2%}<extra></extra>',
+                textfont=dict(size=18),  # Increase font size for text inside the treemap boxes
+                insidetextfont=dict(size=18),  # Increase font size for inside labels
+                outsidetextfont=dict(size=18)  # Increase font size for outside labels
+            )
+            st.plotly_chart(fig_treemap, use_container_width=True)
         
-        # Author section - both tables are calculated, but display based on selection
-        st.subheader("Author Leaderboards")
+        # Consolidated "Most Influential Authors" section
+        st.subheader("Most Influential Authors")
         
-        # Dropdown for author leaderboard view selection
-        author_view = st.selectbox(
-            "Select View", 
-            ["Review Count", "Review Upvotes"],
-            index=0
-        )
+        # Combine both datasets (by count and by upvotes)
+        top_authors_by_count = results["top_authors_by_count"]
+        top_authors_by_upvotes = results["top_authors_by_upvotes"]
         
-        # Display author leaderboard based on selection
-        if author_view == "Review Count":
-            top_authors = results["top_authors_by_count"]
-            if top_authors is not None and not top_authors.empty:
-                # Display leaderboard for top reviewers
-                st.subheader("Top 10 Authors by Review Count")
-                
-                # Display as a table with custom column config to reduce width
-                st.dataframe(
-                    top_authors,
-                    column_config={
-                        "author_id": st.column_config.TextColumn("Author ID", width="medium"),
-                        "review_count": st.column_config.NumberColumn("Review Count", width="small")
-                    },
-                    hide_index=True,
-                    use_container_width=False
-                )
-                
-                # Create bar chart with reduced width
-                fig_reviewers = px.bar(
-                    top_authors,
-                    x="author_id",
-                    y="review_count",
-                    title="Top 10 Authors by Review Count",
-                    labels={"author_id": "Author ID", "review_count": "Number of Reviews"},
-                    color="author_id",
-                    text="review_count"
-                )
-                fig_reviewers.update_layout(
-                    xaxis_tickangle=45,
-                    width=700,  # Set a fixed width
-                    height=500
-                )
-                st.plotly_chart(fig_reviewers, use_container_width=False)
-        else:  # "Review Upvotes"
-            top_upvoted = results["top_authors_by_upvotes"]
-            if top_upvoted is not None and not top_upvoted.empty:
-                # Display leaderboard for most upvoted authors
-                st.subheader("Top 10 Authors by Total Upvotes")
-                
-                # Display as a table with custom column config to reduce width
-                st.dataframe(
-                    top_upvoted,
-                    column_config={
-                        "author_id": st.column_config.TextColumn("Author ID", width="medium"),
-                        "total_upvotes": st.column_config.NumberColumn("Total Upvotes", width="small"),
-                        "review_count": st.column_config.NumberColumn("Review Count", width="small")
-                    },
-                    hide_index=True,
-                    use_container_width=False
-                )
-                
-                # Create bar chart with reduced width
-                fig_upvoted = px.bar(
-                    top_upvoted,
-                    x="author_id",
-                    y="total_upvotes",
-                    title="Top 10 Authors by Total Upvotes",
-                    labels={"author_id": "Author ID", "total_upvotes": "Total Upvotes"},
-                    color="author_id",
-                    text="total_upvotes"
-                )
-                fig_upvoted.update_layout(
-                    xaxis_tickangle=45,
-                    width=700,  # Set a fixed width
-                    height=500
-                )
-                st.plotly_chart(fig_upvoted, use_container_width=False)
-        
-        # Add a note for additional context about author IDs
-        with st.expander("Note on Author IDs"):
+        if (top_authors_by_count is not None and not top_authors_by_count.empty and 
+            top_authors_by_upvotes is not None and not top_authors_by_upvotes.empty):
+            
+            # Create a combined dataframe with influence metrics
+            combined_authors = pd.merge(
+                top_authors_by_count, 
+                top_authors_by_upvotes[["author_id", "total_upvotes"]], 
+                on="author_id", 
+                how="outer"
+            ).fillna(0)
+            
+            # Calculate additional metrics
+            combined_authors["upvotes_per_review"] = combined_authors["total_upvotes"] / combined_authors["review_count"]
+            combined_authors["upvotes_per_review"] = combined_authors["upvotes_per_review"].fillna(0).round(2)
+            
+            # Calculate influence score (normalized combination of review count and upvotes)
+            combined_authors["influence_score"] = (
+                0.4 * (combined_authors["review_count"] / combined_authors["review_count"].max()) + 
+                0.6 * (combined_authors["total_upvotes"] / combined_authors["total_upvotes"].max())
+            ).round(2) * 100  # Scale to 0-100
+            
+            # Sort by influence score
+            combined_authors = combined_authors.sort_values("influence_score", ascending=False).head(10)
+            
+            # Display as a table
+            st.dataframe(
+                combined_authors,
+                column_config={
+                    "author_id": st.column_config.TextColumn("Author ID", width="medium"),
+                    "review_count": st.column_config.NumberColumn("Reviews", width="small"),
+                    "total_upvotes": st.column_config.NumberColumn("Total Upvotes", width="small"),
+                    "upvotes_per_review": st.column_config.NumberColumn("Upvotes/Review", width="small"),
+                    "influence_score": st.column_config.ProgressColumn(
+                        "Influence Score",
+                        width="medium",
+                        format="%d",
+                        min_value=0,
+                        max_value=100
+                    )
+                },
+                hide_index=True,
+                use_container_width=True
+            )
+            
+            # Increase font size for table headers and content
             st.markdown("""
-            Author IDs shown here are Steam user identifiers. Both author leaderboard views (Review Count and Review Upvotes)
-            are calculated in a single data pass, and you can switch between them using the dropdown above.
-            """) 
+            <style>
+            .stDataFrame {
+                font-size: 18px !important;
+            }
+            .stDataFrame th {
+                font-size: 20px !important;
+                font-weight: bold !important;
+            }
+            .stDataFrame td {
+                font-size: 18px !important;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+            
+            # Create lollipop chart for author influence visualization
+            fig_lollipop = go.Figure()
+            
+            # Sort for better visualization
+            chart_data = combined_authors.sort_values("influence_score")
+            
+            # Add lines (stems)
+            fig_lollipop.add_trace(go.Scatter(
+                x=chart_data["influence_score"],
+                y=chart_data["author_id"],
+                mode='lines',
+                line=dict(color='rgba(0, 0, 0, 0.3)', width=1),
+                showlegend=False
+            ))
+            
+            # Add markers (lollipops)
+            fig_lollipop.add_trace(go.Scatter(
+                x=chart_data["influence_score"],
+                y=chart_data["author_id"],
+                mode='markers',
+                marker=dict(
+                    color='rgba(58, 71, 180, 0.8)',
+                    size=12,
+                    line=dict(color='rgba(0, 0, 0, 0.5)', width=1)
+                ),
+                text=[
+                    f"Author: {row['author_id']}<br>" +
+                    f"Influence Score: {row['influence_score']}<br>" +
+                    f"Reviews: {row['review_count']}<br>" +
+                    f"Total Upvotes: {row['total_upvotes']}"
+                    for _, row in chart_data.iterrows()
+                ],
+                hoverinfo='text',
+                showlegend=False
+            ))
+            
+            fig_lollipop.update_layout(
+                title="Author Influence Distribution",
+                xaxis_title="Influence Score",
+                yaxis_title="Author ID",
+                height=500,
+                margin=dict(l=10, r=10, t=40, b=10),
+                xaxis=dict(range=[0, 105]),  # Allow some space at the right
+                font=dict(size=18),  # Increase base font size for the chart
+                title_font=dict(size=22)  # Increase title font size
+            )
+            
+            # Increase font size for axis titles
+            fig_lollipop.update_xaxes(title_font=dict(size=20))
+            fig_lollipop.update_yaxes(title_font=dict(size=20))
+            
+            st.plotly_chart(fig_lollipop, use_container_width=True) 
