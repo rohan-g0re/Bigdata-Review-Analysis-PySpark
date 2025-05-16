@@ -167,14 +167,14 @@ def render_engagement_tab():
             st.markdown("""
             <style>
             .stDataFrame {
-                font-size: 18px !important;
+                font-size: 24px !important;
             }
             .stDataFrame th {
-                font-size: 20px !important;
+                font-size: 28px !important;
                 font-weight: bold !important;
             }
             .stDataFrame td {
-                font-size: 18px !important;
+                font-size: 24px !important;
             }
             </style>
             """, unsafe_allow_html=True)
