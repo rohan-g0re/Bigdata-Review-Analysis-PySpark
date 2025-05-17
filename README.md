@@ -16,6 +16,11 @@ A data analysis dashboard for exploring Steam game reviews built with PySpark an
 
 ## Running the Application
 
+Data Directory: \data\all_reviews\cleaned_reviews
+
+where, 
+cleaned_reviews contains parquet files (crc files removed)
+
 Run in PowerShell using: 
 ```
 python -m streamlit run .\src\streamlit_app.py
