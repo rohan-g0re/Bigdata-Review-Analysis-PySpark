@@ -1,24 +1,22 @@
 # Steam Game Reviews Analysis - Big Data Analytics Platform
 
-A **large-scale big data analytics platform** designed to process and analyze **113 million Steam game reviews** using distributed computing technologies. This enterprise-grade solution demonstrates advanced big data engineering principles, handling massive datasets that span **43GB in raw CSV format**, processing them down to **109 million optimized records in 18GB Parquet format** through sophisticated ETL pipelines and compression techniques.
+A **large-scale big data analytics workflow**, designed to process and analyze **113 million Steam game reviews** using distributed computing technologies. This enterprise-grade solution demonstrates advanced big data engineering principles, handling massive dataset that span **43GB in raw CSV format**, processing them down to **109 million optimized records in 18GB Parquet format** through sophisticated ETL pipelines and **snappy compression technique**.
 
 ## 🎯 Big Data Project Overview
 
-This project showcases a **production-ready big data analytics solution** that tackles the challenges of processing massive gaming datasets at scale. Built on Apache Spark's distributed computing framework, the system demonstrates advanced data engineering practices including distributed processing, columnar storage optimization, and real-time analytics on datasets containing over **100 million records**.
+This project showcases a **production-ready big data analytics solution** built on Apache Spark's distributed computing framework, and demonstrates advanced distributed processing, columnar storage optimization, and real-time analytics on datasets containing over **100 million records**.
 
-### **Big Data Challenges Addressed**
-- **Volume**: Processing **113 million Steam reviews** (43GB raw data) efficiently on a device having only 1GB cache memory available and 10GB available RAM.
-- **Variety**: Multi-structured data including text reviews, numerical metrics, timestamps, categorical and boolean data
-- **Distributed Processing**: Apache Spark cluster computing for horizontal scalability
-- **Data Optimization**: 58% storage reduction (43GB → 18GB) through advanced compression
-- **Value**: Extracting actionable insights from gaming community behavior patterns
-
-### **Big Data Technologies Demonstrated**
-- **Apache Spark**: Distributed data processing across multiple cores/nodes
-- **Columnar Storage**: Parquet format with Snappy compression for analytical workloads
-- **ETL Pipelines**: Large-scale data transformation and cleaning workflows
-- **In-Memory Computing**: Strategic data caching for performance optimization
-- **Machine Learning at Scale**: Batch processing of sentiment analysis on millions of text records
+### **Big Data Technical Implementation & Achievements**
+- **Volume Processing**: **113 million Steam reviews** (43GB raw data) on **1GB cache memory** and **10GB RAM**
+- **Storage Optimization**: **58% storage reduction** (43GB → 18GB) through **Snappy compression**
+- **Distributed Computing**: **Apache Spark cluster** processing across multiple cores/nodes
+- **Columnar Storage**: **Parquet format** with advanced compression for analytical workloads
+- **ETL Pipelines**: Large-scale **data transformation** and **cleaning workflows**
+- **In-Memory Computing**: **Strategic data caching** for dashboard's performance optimization
+- **Machine Learning at Scale**: **Batch processing** of sentiment analysis on millions of text records
+- **Multi-structured Data**: Text reviews, numerical metrics, timestamps, categorical and boolean data
+- **Performance Engineering**: **Sub-minute query response** times on 100M+ record datasets
+- **Memory Management**: Processing datasets **larger than available RAM**
 
 ## 🏗️ Architecture & Technologies
 
@@ -55,14 +53,10 @@ The system follows a layered architecture approach with clear separation of conc
 - **PyArrow 12.0+**: High-performance columnar data processing
 - **Parquet Format**: Efficient columnar storage for optimized query performance
 
-#### **Web Application Framework**
-- **Streamlit 1.28+**: Modern web framework for data applications
-- **Python 3.8+**: Core programming language
+#### **Web Application Framework: Streamlit & Python**
 
-#### **Data Visualization**
-- **Plotly 5.15+ & Altair**: Interactive charts and visualizations
-- **Pandas 2.0+**: Data manipulation and analysis
-- **NumPy 1.24+**: Numerical computing foundation
+
+#### **Data Visualization:  Altair, Plotly & NumPy**
 
 #### **Machine Learning & AI**
 - **Transformers 4.35.0**: Hugging Face library for NLP models
@@ -71,6 +65,21 @@ The system follows a layered architecture approach with clear separation of conc
 
 
 ## 📊 Data Pre-processing
+
+### Data Processing Pipeline
+
+1. **Data Ingestion**: Load pre-processed Parquet files using Spark
+2. **Schema Validation**: Verify data structure and types
+3. **Data Cleaning**: 
+   - Remove null/empty values
+   - Convert Unix timestamps to datetime
+   - Cast columns to appropriate types
+   - Drop unnecessary columns
+4. **Data Optimization**: 
+   - Apply Snappy compression
+   - Coalesce partitions for optimal storage
+   - Create indexed structures for fast queries
+
 
 ### Core Data Fields
 ```python
@@ -93,20 +102,6 @@ The system follows a layered architecture approach with clear separation of conc
     "weighted_vote_score": "float"      # Steam's weighted score
 }
 ```
-
-### Data Processing Pipeline
-
-1. **Data Ingestion**: Load pre-processed Parquet files using Spark
-2. **Schema Validation**: Verify data structure and types
-3. **Data Cleaning**: 
-   - Remove null/empty values
-   - Convert Unix timestamps to datetime
-   - Cast columns to appropriate types
-   - Drop unnecessary columns
-4. **Data Optimization**: 
-   - Apply Snappy compression
-   - Coalesce partitions for optimal storage
-   - Create indexed structures for fast queries
 
 
 ## 🛠️ Implementation Details
