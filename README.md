@@ -4,25 +4,23 @@ A **large-scale big data analytics workflow**, designed to process and analyze *
 
 ## 🎯 Big Data Project Overview
 
-This project showcases a **production-ready big data analytics solution** built on Apache Spark's distributed computing framework, and demonstrates advanced distributed processing, columnar storage optimization, and real-time analytics on datasets containing over **100 million records**.
+This project showcases a **big data analytics solution** built on Apache Spark's distributed computing framework, which demonstrates advanced distributed processing and real-time analytics on steam review dataset containing over **100 million records**.
 
 ### **Big Data Technical Implementation & Achievements**
-- **Volume Processing**: **113 million Steam reviews** (43GB raw data) on **1GB cache memory** and **10GB RAM**
+- **Volume Processing**: **113 million Steam reviews** (43GB raw data) on a device with **1GB cache memory** and **10GB RAM**
 - **Storage Optimization**: **58% storage reduction** (43GB → 18GB) through **Snappy compression**
-- **Distributed Computing**: **Apache Spark cluster** processing across multiple cores/nodes
-- **Columnar Storage**: **Parquet format** with advanced compression for analytical workloads
-- **ETL Pipelines**: Large-scale **data transformation** and **cleaning workflows**
 - **In-Memory Computing**: **Strategic data caching** for dashboard's performance optimization
+- **Memory Management**: Processing datasets **larger than available RAM**
 - **Machine Learning at Scale**: **Batch processing** of sentiment analysis on millions of text records
 - **Multi-structured Data**: Text reviews, numerical metrics, timestamps, categorical and boolean data
-- **Performance Engineering**: **Sub-minute query response** times on 100M+ record datasets
-- **Memory Management**: Processing datasets **larger than available RAM**
+- **ETL Pipelines**: Large-scale **data transformation** and **cleaning workflows**
+- **Columnar Storage**: **Parquet format** with advanced compression for analytical workloads
 
 ## 🏗️ Architecture & Technologies
 
 ### System Architecture
 
-![System Architecture](Architecture-Diagram.png)
+<img src="Architecture-Diagram.png" alt="System Architecture" width="400" height="300">
 
 The system follows a layered architecture approach with clear separation of concerns:
 
@@ -177,13 +175,6 @@ Modify `src/utils/spark_session.py` to adjust:
 Update file paths in:
 - `src/tabs/engagement_tab/ui.py`
 - `books_and_scripts/clean_parquet.py`
-
-## 📈 Performance Metrics
-
-- **Dataset Size**: Handles **113 million rows** of reviews efficiently, summing up to **41GB in csv format**
-- **Memory Usage**: Optimized for 8GB+ systems
-- **Scalability**: Designed for horizontal scaling with Spark clusters
-
 
 ## 🤝 Contributing
 
