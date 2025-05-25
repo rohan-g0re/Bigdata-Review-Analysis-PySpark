@@ -1,4 +1,4 @@
-# Steam Game Reviews Analysis - Big Data Analytics Platform
+# Steam Game Reviews Analysis - Big Data Analytics
 
 A **large-scale big data analytics workflow**, designed to process and analyze **113 million Steam game reviews** using distributed computing technologies. This enterprise-grade solution demonstrates advanced big data engineering principles, handling massive dataset that span **43GB in raw CSV format**, processing them down to **109 million optimized records in 18GB Parquet format** through sophisticated ETL pipelines and **snappy compression technique**.
 
