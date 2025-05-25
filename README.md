@@ -66,7 +66,7 @@ The system follows a layered architecture approach with clear separation of conc
 
 ### Data Processing Pipeline
 
-1. **Data Ingestion**: Load pre-processed Parquet files using Spark
+1. **Data Ingestion**: Load raw CSV files using Spark
 2. **Schema Validation**: Verify data structure and types
 3. **Data Cleaning**: 
    - Remove null/empty values
@@ -176,20 +176,20 @@ Update file paths in:
 - `src/tabs/engagement_tab/ui.py`
 - `books_and_scripts/clean_parquet.py`
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Implement changes with tests
 4. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
-- Steam for providing the review data
+- [Kaggle Steam Reviews Dataset](https://www.kaggle.com/datasets/kieranpoc/steam-reviews) for providing the raw data
 - Apache Spark community for the big data framework
 - Hugging Face for pre-trained NLP models
 - Streamlit team for the web framework 
